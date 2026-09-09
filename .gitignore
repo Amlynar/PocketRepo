@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env._
+build/
+dist/
+
+# Distribution / uploads
+.Python*
+compile_warning.txt
+py_compile_*.pyc
+*.pyo
+*.pyd
+
+# Testing/coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+cover.xml
+
+# PyInstaller
+#  --onefile
+#  --distpath .
+#  --workpath .
+#  --name "my_app"
+#  --clean
+build/
+develop-eggs__*__*__*__*__*__*__*__.egg
+*.egg
+.python_history
+.pytest_cache
+.mypy_cache
+.mypy_extensions
+.type_check_extensions
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.venv
+*.env
+.env.*
