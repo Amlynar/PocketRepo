@@ -1,9 +1,0 @@
-{
-  "projects": [
-    {
-      "id": 1,
-      "name": "Sample Project",
-      "repo_url": "https://github.com/username/sample-repo"
-    }
-  ]
-}

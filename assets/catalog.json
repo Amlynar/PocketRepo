@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "id": "sample_project",
+      "name": "Sample Project",
+      "description": "A sample project description",
+      "source": {
+        "type": "github_zip",
+        "url": "https://github.com/username/sample-repo/archive/refs/heads/main.zip"
+      },
+      "destination": "/path/to/local/directory",
+      "options": {
+        "auto_run": true,
+        "version": "1.0.0"
+      }
+    }
+  ]
+}
