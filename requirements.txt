@@ -1,1 +1,2 @@
-# No external dependencies required yet
+requests>=2.31.0
+    
