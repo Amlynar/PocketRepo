@@ -1,22 +1,11 @@
 from injector import Injector
-
-from src.common.repositories.catalog_repo import CatalogRepository
+from src.application.pocket_repo_app import PocketRepoApp
+from src.application.dev_app import DevApp
 
 def main():
-
-    print("Starting the application...")
     injector = Injector()
-
-    print("Setting up injector and dependencies...")
-    catalog_repo = injector.get(CatalogRepository)
-
-    print("Loading catalog repository...")
-    catalog_repo.load_catalog()
-
-    print("Catalogs loaded:")
-    for catalog in catalog_repo.get_catalogs():
-        print(f"- {catalog.name} (ID: {catalog.id})")
-
+    app = injector.get(PocketRepoApp)
+    app.run()
     pass
 
 if __name__ == "__main__":
