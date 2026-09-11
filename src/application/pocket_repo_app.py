@@ -11,6 +11,7 @@ class PocketRepoApp:
 
     def run(self):
         print("Starting the PocketRepo application...")
+        print("Tesing something")
         print("Loading catalog repository...")
         self.catalog_repo.load_catalog()
         catalogs = self.catalog_repo.get_catalogs()

@@ -1,14 +1,14 @@
 {
   "projects": [
     {
-      "id": "sample_project",
-      "name": "Sample Project",
-      "description": "A sample project description",
+      "id": "draft_locke",
+      "name": "Draft Locke",
+      "description": "Randomizer for Pokemon Gen 1 Nuzlocke",
       "source": {
         "type": "github_zip",
-        "url": "https://github.com/username/sample-repo/archive/refs/heads/main.zip"
+        "url": "https://github.com/Amlynar/DraftLocke/archive/refs/heads/main.zip"
       },
-      "destination": "/path/to/local/directory",
+      "destination": "DraftLocke",
       "options": {
         "auto_run": true,
         "version": "1.0.0"
