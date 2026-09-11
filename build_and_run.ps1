@@ -2,4 +2,4 @@
 docker build -t pocket_repo .
 
 # Run the container, removing it after exit
-docker run --rm pocket_repo
+docker run --rm -v ~/Documents:/root/Documents pocket_repo
