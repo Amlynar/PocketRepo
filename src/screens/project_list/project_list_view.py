@@ -21,7 +21,7 @@ class ProjectListView(PRBaseScreen):
         return len(self.model.projects)
 
     def tableview_cell_for_row(self, tableview, section, row):
-        cell = ui.TableViewCell()
+        cell = ui.TableViewCell('subtitle')
         cell.text_label.text = self.model.projects[row].name
         return cell
     
