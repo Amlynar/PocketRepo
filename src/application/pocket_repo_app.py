@@ -14,7 +14,7 @@ class PocketRepoApp:
 
     def run(self):
 
-        # self.catalog_repo.load_catalog()
-        # print(f"Loaded {len(self.catalog_repo.get_all_projects())} projects from catalog.")
+        self.catalog_repo.load_catalog()
+        print(f"Loaded {len(self.catalog_repo.get_all_projects())} projects from catalog.")
         self.project_list_controller.view.present("fullscreen")
             

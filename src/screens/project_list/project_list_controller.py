@@ -14,8 +14,6 @@ class ProjectListController:
         self.project_update_service = project_update_service
         self.catalog_repository = catalog_repository
 
-        self.catalog_repository.load_catalog()
-
         self.model = ProjectListModel()
         self.view = ProjectListView()
 

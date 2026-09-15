@@ -13,10 +13,6 @@ class ProjectListView(PRBaseScreen):
         self.table_view.delegate = self
         self.add_subview(self.table_view)
 
-    def did_load(self):
-        print("ProjectListView did load.")
-        
-
     def update_ui(self, project_list_model: ProjectListModel):
         self.model = project_list_model
         print(f"Updating UI with {len(self.model.projects)} projects.")
