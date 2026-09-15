@@ -4,6 +4,7 @@ import ui
 class ProjectListView(ui.View):
     def __init__(self):
         super().__init__()
+        self.background_color = 'white'
         self.model = ProjectListModel()
         self.table_view = ui.TableView()
         self.flex = 'LRTB'
