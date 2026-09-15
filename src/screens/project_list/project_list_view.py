@@ -1,13 +1,14 @@
+from src.screens.base.base_screen import PRBaseScreen
 from src.screens.project_list.project_list_model import ProjectListModel
 import ui
 
-class ProjectListView(ui.View):
+class ProjectListView(PRBaseScreen):
     def __init__(self):
         super().__init__()
-        self.background_color = 'white'
+        
         self.model = ProjectListModel()
         self.table_view = ui.TableView()
-        self.flex = 'LRTB'
+        
         self.table_view.data_source = self
         self.table_view.delegate = self
         self.add_subview(self.table_view)
