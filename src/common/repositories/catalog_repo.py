@@ -18,8 +18,6 @@ class CatalogRepository:
             data = json.load(f)
             self._catalogs = {project.id: project for project in (Project.from_dict(c) for c in data.get("projects", []))}
 
-        print(f"Loaded {len(self._catalogs)} projects from the catalog.")
-
     def get_all_projects(self) -> List[Project]:
         return list(self._catalogs.values())
 
