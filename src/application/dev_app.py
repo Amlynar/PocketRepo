@@ -15,7 +15,7 @@ class DevApp:
         print("Starting the PocketRepo DevApp application...")
 
         self.catalog_repo.load_catalog()
-        projects = self.catalog_repo.get_catalogs()
+        projects = self.catalog_repo.get_all_projects()
         print("Catalogs loaded:")
         for project in projects:
             print(f"- {project.name} (ID: {project.id})")

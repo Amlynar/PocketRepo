@@ -18,7 +18,7 @@ class CatalogRepository:
             data = json.load(f)
             self._catalogs = {project.id: project for project in (Project.from_dict(c) for c in data.get("projects", []))}
 
-    def get_catalogs(self) -> List[Project]:
+    def get_all_projects(self) -> List[Project]:
         return list(self._catalogs.values())
 
     def project_exists(self, project_id: str) -> bool:

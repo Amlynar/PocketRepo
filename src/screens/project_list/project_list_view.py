@@ -13,6 +13,10 @@ class ProjectListView(PRBaseScreen):
         self.table_view.delegate = self
         self.add_subview(self.table_view)
 
+    def update_ui(self, project_list_model: ProjectListModel):
+            self.model = project_list_model
+            self.table_view.reload_data()
+
     def tableview_number_of_rows(self, tableview, section):
         return len(self.model.projects)
 
