@@ -16,11 +16,16 @@ class ProjectListView(PRBaseScreen):
         self.root_view = ui.View()
         self.root_view.flex = 'WH'
 
+        self.label = ui.Label()
+        self.label.text = "Text Label"
+        self.label.background_color = "black"
+        self.label.text_color = "white"
+        self.root_view.add_subview(self.label)
+
         self.table_view = ui.TableView()
         self.table_view.flex = 'WH'
         self.table_view.data_source = data_source
         self.table_view.delegate = data_source
-
         self.root_view.add_subview(self.table_view)
 
     def display_content(self):
