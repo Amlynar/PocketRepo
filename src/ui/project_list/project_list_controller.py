@@ -25,9 +25,13 @@ class ProjectListController(PRBaseController):
     @ui.in_background
     def on_screen_loaded(self):
         self.view.show_loading()
+        print("show loading")
         self.catalog_repository.load_catalog()
+        print("loading catalog")
         self.model.projects = self.catalog_repository.get_all_projects()
+        print("getting projects")
         self.view.display_content()
+        print("displayed content")
         
     def tableview_number_of_rows(self, tableview, section):
         return len(self.model.projects)
