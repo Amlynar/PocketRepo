@@ -34,6 +34,8 @@ class PRBaseScreen(ui.View):
             self.spinner = None
 
     def layout(self):
+        print("layout called")
         if self.spinner:
+            print("spinner location set")
             # Center the spinner in the view
-            self.spinner.center = (self.width * 0.5, self.height * 0.5)
+            # self.spinner.center = (self.width * 0.5, self.height * 0.5)
