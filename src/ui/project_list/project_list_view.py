@@ -23,6 +23,6 @@ class ProjectListView(PRBaseScreen):
 
     def display_content(self):
         self.show_content(self.root_view)
-        self.root_view.table_view.reload_data()
+        self.table_view.reload_data()
         
     
