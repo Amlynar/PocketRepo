@@ -23,7 +23,7 @@ class ProjectListView(PRBaseScreen):
         self.label.text_color = "white"
         self.label.flex = "WH"
         self.label.alignment = 1
-        # self.root_view.add_subview(self.label)
+        self.root_view.add_subview(self.label)
 
         self.table_view = ui.TableView()
         # self.table_view.flex = 'WH'
@@ -32,8 +32,9 @@ class ProjectListView(PRBaseScreen):
         # self.root_view.add_subview(self.table_view)
 
     def display_content(self):
-        self.show_content(self.label)
-        self.table_view.reload_data()
+        self.root_view.present('fullscreen')
+        # self.show_content(self.label)
+        # self.table_view.reload_data()
 
 
 class ProjectListItemProvider():
