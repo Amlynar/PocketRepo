@@ -6,7 +6,7 @@ from src.ui.project_list.project_list_model import ProjectListModel
 from src.ui.project_list.project_list_view import ProjectListView, ProjectListItemProvider
 from src.common.repositories.catalog_repo import CatalogRepository
 from src.common.services.project_update_service import ProjectUpdateService
-
+import time
 class ProjectListController(PRBaseController):
 
     @inject
@@ -24,6 +24,7 @@ class ProjectListController(PRBaseController):
     @ui.in_background
     def on_screen_loaded(self):
         self.view.show_loading()
+        time.sleep(3)
         self.catalog_repository.load_catalog()
         self.model.projects = self.catalog_repository.get_all_projects()
         self.view.display_content()

@@ -23,7 +23,8 @@ class PRBaseScreen(ui.View):
         self.loading_spinner = ui.ActivityIndicator()
         self.loading_spinner.style = ui.ACTIVITY_INDICATOR_STYLE_GRAY
         self.loading_spinner.color = '#333333' # Dark gray spinner color
-        self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
+        # self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
+        self.loading_spinner.alignment = ui.ALIGN_CENTER
         self.loading_spinner.hides_when_stopped = True
         
         self.add_subview(self.loading_spinner)
