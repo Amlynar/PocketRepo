@@ -19,12 +19,13 @@ class PRBaseScreen(ui.View):
         print("ActivityIndicator created.")
         
         # Choose style: 'gray', 'white', or 'white_large'
-        self.spinner.style = ui.ACTIVITY_INDICATOR_STYLE_WHITE_LARGE
+        # self.spinner.style = ui.ACTIVITY_INDICATOR_STYLE_WHITE_LARGE
+        self.spinner.style = ui.ACTIVITY_INDICATOR_STYLE_GRAY
         self.spinner.color = '#333333' # Dark gray spinner color
         
         # FIX 1: Provide explicit dimensions for the spinner frame
-        self.spinner.width = 50
-        self.spinner.height = 50
+        # self.spinner.width = 50
+        # self.spinner.height = 50
         
         # Center it immediately on creation for the initial frame draw
         self.spinner.center = (self.width * 0.5, self.height * 0.5)
