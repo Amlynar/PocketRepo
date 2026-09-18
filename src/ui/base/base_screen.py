@@ -20,23 +20,12 @@ class PRBaseScreen(ui.View):
         self.hide_all_displayed()
             
         self.loading_spinner = ui.ActivityIndicator()
-        
-        # Choose style: 'gray', 'white', or 'white_large'
-        # self.spinner.style = ui.ACTIVITY_INDICATOR_STYLE_WHITE_LARGE
         self.loading_spinner.style = ui.ACTIVITY_INDICATOR_STYLE_GRAY
         self.loading_spinner.color = '#333333' # Dark gray spinner color
-        
-        # FIX 1: Provide explicit dimensions for the spinner frame
-        # self.spinner.width = 50
-        # self.spinner.height = 50
-        
-        # Center it immediately on creation for the initial frame draw
         self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
-        
         self.loading_spinner.hides_when_stopped = True
         
         self.add_subview(self.loading_spinner)
-        
         self.loading_spinner.start()
 
     def hide_loading(self):
