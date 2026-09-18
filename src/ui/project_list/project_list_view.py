@@ -8,9 +8,9 @@ class ProjectListView(PRBaseScreen):
         super().__init__()
         self.root_view = None
 
-    def layout(self):
-        super().layout()
-        self.table_view.frame = (0, 0, self.width, self.height)
+    # def layout(self):
+    #     super().layout()
+        # self.table_view.frame = (0, 0, self.width, self.height)
         
     def init_root_view(self, data_source):
         self.root_view = ui.View()

@@ -10,9 +10,9 @@ class PRBaseScreen(ui.View):
         # self.flex = 'LRTB'
         super().__init__()
 
-    def layout(self):
-        if self.loading_spinner:
-            self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
+    # def layout(self):
+    #     if self.loading_spinner:
+    #         self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
 
     def show_loading(self):
         if self.loading_spinner:
