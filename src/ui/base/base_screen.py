@@ -6,7 +6,7 @@ class PRBaseScreen(ui.View):
         self.content = None
         self.error = None
         self.background_color = 'blue'
-        self.flex = 'WH' # Note: Use 'W+H' to allow the view to expand/fill parent containers
+        self.flex = 'WH'
         # self.flex = 'LRTB'
         super().__init__()
 
