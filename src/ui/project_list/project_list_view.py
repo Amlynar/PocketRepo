@@ -14,7 +14,7 @@ class ProjectListView(PRBaseScreen):
         
     def init_root_view(self, data_source):
         self.root_view = ui.View()
-        
+        self.root_view.background_color = "green"
         self.root_view.flex = 'WH'
 
         # self.label = ui.Label()
