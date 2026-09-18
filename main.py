@@ -3,8 +3,9 @@ from src.application.pocket_repo_app import PocketRepoApp
 # from src.application.dev_app import DevApp
 
 def main():
-    injector = Injector()
-    app = injector.get(PocketRepoApp)
+    # injector = Injector()
+    # app = injector.get(PocketRepoApp)
+    app = PocketRepoApp()
     app.run()
     pass
 

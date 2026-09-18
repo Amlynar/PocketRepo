@@ -19,7 +19,6 @@ class ProjectListView(PRBaseScreen):
 
     def update_ui(self, project_list_model: ProjectListModel):
         self.model = project_list_model
-        print(f"Updating UI with {len(self.model.projects)} projects.")
         self.table_view.reload_data()
 
     def tableview_number_of_rows(self, tableview, section):

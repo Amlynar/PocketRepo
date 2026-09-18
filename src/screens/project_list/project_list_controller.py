@@ -1,13 +1,14 @@
 
 from injector import inject
 
+from src.screens.base.base_controller import PRBaseController
 from src.screens.project_list.project_list_model import ProjectListModel
 from src.screens.project_list.project_list_view import ProjectListView
 from src.common.repositories.catalog_repo import CatalogRepository
 from src.common.services.project_update_service import ProjectUpdateService
 
 
-class ProjectListController:
+class ProjectListController(PRBaseController):
 
     @inject
     def __init__(self, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):
@@ -21,3 +22,7 @@ class ProjectListController:
 
         self.model.projects = self.catalog_repository.get_all_projects()
         self.view.update_ui(self.model)
+
+    def on_screen_loaded(self):
+        print("ProjectListController: Screen loaded.")
+        pass
