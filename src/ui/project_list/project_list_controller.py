@@ -16,14 +16,15 @@ class ProjectListController(PRBaseController):
         self.project_update_service = project_update_service
         self.catalog_repository = catalog_repository
 
-        self.catalog_repository.load_catalog()
+        # self.catalog_repository.load_catalog()
 
         self.model = ProjectListModel()
         self.view = ProjectListView()
 
-        self.model.projects = self.catalog_repository.get_all_projects()
-        self.view.update_ui(self.model)
+        # self.model.projects = self.catalog_repository.get_all_projects()
+        # self.view.update_ui(self.model)
 
     def on_screen_loaded(self):
         print("ProjectListController: Screen loaded.")
+        self.view.show_loading_spinner()
         pass
