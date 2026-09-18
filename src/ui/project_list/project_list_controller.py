@@ -17,7 +17,7 @@ class ProjectListController(PRBaseController):
         self.project_update_service = project_update_service
         self.catalog_repository = catalog_repository
 
-        self.view.source = self
+        self.view.init_root_view(data_source=self)
 
         
     @ui.in_background

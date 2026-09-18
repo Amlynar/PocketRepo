@@ -6,16 +6,23 @@ import ui
 class ProjectListView(PRBaseScreen):
     def __init__(self):
         super().__init__()
-        self.source = None
+        self.root_view = None
 
     def layout(self):
         super().layout()
         # self.table_view.frame = (0, 0, self.width, self.height)
         
+    def init_root_view(self, data_source):
+        self.root_view = ui.View()
+
+        self.table_view = ui.TableView()                        
+        self.table_view.data_source = data_source
+        self.table_view.delegate = data_source
+
+        self.root_view.add_subview(self.table_view)
 
     def display_content(self):
-        content = ProjectListContent(data_source=self.source,delegate=self.source)
-        self.show_content(content)
-        self.content.table_view.reload_data()
+        self.show_content(self.root_view)
+        self.root_view.table_view.reload_data()
         
     
