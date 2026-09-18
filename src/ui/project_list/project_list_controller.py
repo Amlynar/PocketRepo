@@ -3,17 +3,18 @@ from injector import inject
 
 from src.ui.base.base_controller import PRBaseController
 from src.ui.project_list.project_list_model import ProjectListModel
-from src.ui.project_list.project_list_view import ProjectListView, ProjectListItem
+from src.ui.project_list.project_list_view import ProjectListView, ProjectListItemProvider
 from src.common.repositories.catalog_repo import CatalogRepository
 from src.common.services.project_update_service import ProjectUpdateService
 
 class ProjectListController(PRBaseController):
 
     @inject
-    def __init__(self, model: ProjectListModel, view: ProjectListView, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):
+    def __init__(self, model: ProjectListModel, view: ProjectListView, item_provider: ProjectListItemProvider, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):
         super().__init__()
         self.model = model
         self.view = view
+        self.item_provider = item_provider
         self.project_update_service = project_update_service
         self.catalog_repository = catalog_repository
 
@@ -32,4 +33,4 @@ class ProjectListController(PRBaseController):
     
     def tableview_cell_for_row(self, tableview, section, row):
         project = self.model.projects[row]
-        return ProjectListItem(name=project.name)
+        return self.item_provider.create(name=project.name)

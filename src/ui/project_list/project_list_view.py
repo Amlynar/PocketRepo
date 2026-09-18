@@ -31,9 +31,12 @@ class ProjectListView(PRBaseScreen):
         self.table_view.reload_data()
 
 
+class ProjectListItemProvider():
+    def __init__(self):
+        pass
 
-class ProjectListItem(ui.TableViewCell):
-    def __init__(self, name: str):
-        super().__init__('subtitle')
-        self.cell.text_label.text = name
+    def create(self, name: str) -> ui.TableViewCell:
+        cell = ui.TableViewCell('subtitle')
+        cell.text_label.text = name
+        return cell
         
