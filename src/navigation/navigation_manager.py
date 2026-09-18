@@ -21,10 +21,10 @@ class NavigationManager:
 
     def setup_navigation(self, view: ui.View):
         self.root_view = view
-        self.root_view.name = "PocketRepo"
-        self.root_view.background_color = 'white'
+        # self.root_view.name = "PocketRepo"
+        # self.root_view.background_color = 'white'
 
         self.nav_view = ui.NavigationView(self.root_view)
-        self.nav_view.bar_tint_color = 'white'
-        self.nav_view.title_color = 'black'
+        # self.nav_view.bar_tint_color = 'white'
+        # self.nav_view.title_color = 'black'
         
