@@ -10,18 +10,13 @@ from src.common.services.project_update_service import ProjectUpdateService
 class ProjectListController(PRBaseController):
 
     @inject
-    def __init__(self, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):
+    def __init__(self, model: ProjectListModel, view: ProjectListView, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):
         super().__init__()
         self.project_update_service = project_update_service
         self.catalog_repository = catalog_repository
 
-        # self.catalog_repository.load_catalog()
-
-        self.model = ProjectListModel()
-        self.view = ProjectListView()
-
-        # self.model.projects = self.catalog_repository.get_all_projects()
-        # self.view.update_ui(self.model)
+        self.model = model
+        self.view = view
 
         
     @ui.in_background
