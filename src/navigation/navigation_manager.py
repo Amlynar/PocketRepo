@@ -25,6 +25,7 @@ class NavigationManager:
         # self.root_view.background_color = 'white'
 
         self.nav_view = ui.NavigationView(self.root_view)
+        self.nav_view.background_color = 'white'
         # self.nav_view.bar_tint_color = 'white'
         # self.nav_view.title_color = 'black'
         
