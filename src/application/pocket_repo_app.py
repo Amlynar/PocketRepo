@@ -23,15 +23,16 @@ class PocketRepoApp:
         self.current_controller = self.get_and_decorate_controller(ProjectListScreenRoute())
         self.navigation_manager = NavigationManager(intial_view=self.current_controller.view)
         self.navigation_manager.present()
+        self.current_controller.on_screen_loaded()
 
     def navigate(self, route: PRNavigationRoute):
         controller = self.get_and_decorate_controller(route)
         self.navigation_manager.push_screen(controller.view)
+        self.current_controller.on_screen_loaded()
 
     def get_and_decorate_controller(self, route: PRNavigationRoute) -> PRBaseController:
         self.current_controller = route.to_controller(self.injector)
         self.current_controller.navigation = self.navigation
-        self.current_controller.on_screen_loaded()
         return self.current_controller
 
 
