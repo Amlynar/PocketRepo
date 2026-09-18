@@ -20,6 +20,8 @@ class ProjectListView(PRBaseScreen):
         self.label.text = "Text Label"
         self.label.background_color = "black"
         self.label.text_color = "white"
+        self.label.flex = 'WH'
+        self.label.alignment = 1
         self.root_view.add_subview(self.label)
 
         self.table_view = ui.TableView()
