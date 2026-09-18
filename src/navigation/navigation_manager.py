@@ -12,11 +12,9 @@ class NavigationManager:
             self.nav_view.push_view(next_view)
         
     def pop_screen(self):
-        """Pops the top view off the stack (returns to the previous screen)."""
         self.nav_view.pop_view()
         
     def present(self, style='fullscreen'):
-        """Displays the navigation container on screen."""
         self.nav_view.present(style)
 
     def setup_navigation(self, view: ui.View):
