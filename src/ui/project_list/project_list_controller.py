@@ -24,7 +24,7 @@ class ProjectListController(PRBaseController):
         # self.model.projects = self.catalog_repository.get_all_projects()
         # self.view.update_ui(self.model)
 
-        self.view.show_loading_spinner()
+        
 
     def on_screen_loaded(self):
         print("ProjectListController: Screen loaded.")
