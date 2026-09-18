@@ -24,6 +24,7 @@ class PRBaseScreen(ui.View):
         
         # Start the spinning animation automatically
         self.spinner.start()
+        print("Loading spinner shown.")
 
     def hide_loading_spinner(self):
         if self.spinner:
