@@ -12,6 +12,7 @@ class ProjectListController(PRBaseController):
 
     @inject
     def __init__(self, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):
+        super().__init__()
         self.project_update_service = project_update_service
         self.catalog_repository = catalog_repository
 

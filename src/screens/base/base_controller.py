@@ -10,6 +10,7 @@ class PRBaseController:
 
     @abstractmethod
     def on_screen_loaded(self):
+        print("PRBaseController.on_screen_loaded called.")
         """
         Called when the screen is loaded.
         """

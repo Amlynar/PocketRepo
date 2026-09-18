@@ -38,6 +38,7 @@ class PocketRepoApp:
     def get_and_decorate_controller(self, route: PRNavigationRoute) -> PRBaseController:
         self.current_controller = route.to_controller(self.injector)
         self.current_controller.navigation = self.navigation
+        self.current_controller.on_screen_loaded()
         return self.current_controller
 
 
