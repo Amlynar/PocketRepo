@@ -14,17 +14,14 @@ class ProjectListView(PRBaseScreen):
         
     def init_root_view(self, data_source):
         self.root_view = ui.View()
+        self.root_view.flex = 'WH'
 
-        self.table_view = ui.TableView()                        
+        self.table_view = ui.TableView()
+        self.table_view.flex = 'WH'
         self.table_view.data_source = data_source
         self.table_view.delegate = data_source
 
         self.root_view.add_subview(self.table_view)
-
-    def init_table_cell(self, name: str) -> ui.TableViewCell:
-        cell = ui.TableViewCell('subtitle')
-        cell.text_label.text = name
-        return cell
 
     def display_content(self):
         self.show_content(self.root_view)
@@ -37,6 +34,7 @@ class ProjectListItemProvider():
 
     def create(self, name: str) -> ui.TableViewCell:
         cell = ui.TableViewCell('subtitle')
+        cell.flex = 'WH'
         cell.text_label.text = name
         return cell
         
