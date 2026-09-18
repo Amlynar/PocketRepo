@@ -4,7 +4,7 @@ import ui
 
 class ProjectListView(PRBaseScreen):
     def __init__(self):
-        
+        super().__init__()
         
         self.model = ProjectListModel()
         # self.table_view = ui.TableView()
@@ -13,7 +13,7 @@ class ProjectListView(PRBaseScreen):
         # self.table_view.delegate = self
         # self.add_subview(self.table_view)
         self.show_loading_spinner()
-        super().__init__()
+        
 
     def layout(self):
         super().layout()
