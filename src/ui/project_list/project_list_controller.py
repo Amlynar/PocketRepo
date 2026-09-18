@@ -28,5 +28,5 @@ class ProjectListController(PRBaseController):
 
     def on_screen_loaded(self):
         print("ProjectListController: Screen loaded.")
-        # self.view.show_loading_spinner()
+        self.view.show_loading_spinner()
         pass

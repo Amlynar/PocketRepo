@@ -12,7 +12,8 @@ class ProjectListView(PRBaseScreen):
         # self.table_view.data_source = self
         # self.table_view.delegate = self
         # self.add_subview(self.table_view)
-        self.show_loading_spinner()
+        
+        # self.show_loading_spinner()
         
 
     def layout(self):
