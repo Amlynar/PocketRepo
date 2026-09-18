@@ -13,7 +13,6 @@ class PocketRepoApp:
     def __init__(self):
         self.injector = Injector()
 
-        self.navigation_manager = NavigationManager()
         self.navigation = PRNavigation()
         self.navigation.navigate = self.navigate
 
@@ -22,14 +21,8 @@ class PocketRepoApp:
     def run(self):
 
         self.current_controller = self.get_and_decorate_controller(ProjectListScreenRoute())
-        self.navigation_manager.setup_navigation(self.current_controller.view)
+        self.navigation_manager = NavigationManager(intial_view=self.current_controller.view)
         self.navigation_manager.present()
-
-        # self.navigation.navigate(ProjectListScreenRoute())
-        # self.catalog_repo.load_catalog()
-        # print(f"Loaded {len(self.catalog_repo.get_all_projects())} projects from catalog.")
-        # self.project_list_controller.view.present("fullscreen")
-
 
     def navigate(self, route: PRNavigationRoute):
         controller = self.get_and_decorate_controller(route)
