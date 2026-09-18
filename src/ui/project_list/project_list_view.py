@@ -34,6 +34,6 @@ class ProjectListView(PRBaseScreen):
 
 class ProjectListItem(ui.TableViewCell):
     def __init__(self, name: str):
-        super().__init('subtitle')
+        super().__init__('subtitle')
         self.cell.text_label.text = name
         
