@@ -8,9 +8,9 @@ class ProjectListView(PRBaseScreen):
         super().__init__()
         self.root_view = None
 
-    # def layout(self):
-    #     super().layout()
-        # self.table_view.frame = (0, 0, self.width, self.height)
+    def layout(self):
+        # super().layout()
+        self.root_view.frame = (0, 0, self.width, self.height)
         
     def init_root_view(self, data_source):
         self.root_view = ui.View()
@@ -32,9 +32,8 @@ class ProjectListView(PRBaseScreen):
         # self.root_view.add_subview(self.table_view)
 
     def display_content(self):
-        self.root_view.present('fullscreen')
-        # self.show_content(self.label)
-        # self.table_view.reload_data()
+        self.show_content(self.root_view)
+        self.table_view.reload_data()
 
 
 class ProjectListItemProvider():
