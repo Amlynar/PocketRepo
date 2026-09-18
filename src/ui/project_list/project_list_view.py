@@ -6,41 +6,34 @@ import ui
 class ProjectListView(PRBaseScreen):
     def __init__(self):
         super().__init__()
-        
-        self.model = ProjectListModel()
+        self.source = None
+        # self.model = ProjectListModel()
 
-        # self.table_view = ui.TableView()
-        
-        # self.table_view.data_source = self
-        # self.table_view.delegate = self
-        # self.add_subview(self.table_view)
-        
-        # self.show_loading_spinner()
         
 
     def layout(self):
         super().layout()
         # self.table_view.frame = (0, 0, self.width, self.height)
-
-    def display_content(self):
-        content = ProjectListContent(data_source=self,delegate=self)
-        self.show_content(content)
-
-    def did_load(self):
-        print("ProjectListView did load.")
         
 
-    def update_ui(self, project_list_model: ProjectListModel):
-        self.model = project_list_model
-        self.display_content()
-        # is there a better way to do below?
+    def display_content(self):
+        self.content = ProjectListContent(data_source=self.source,delegate=self.source)
+        self.show_content(self.content)
         self.content.table_view.reload_data()
 
-    def tableview_number_of_rows(self, tableview, section):
-        return len(self.model.projects)
+        
 
-    def tableview_cell_for_row(self, tableview, section, row):
-        cell = ui.TableViewCell('subtitle')
-        cell.text_label.text = self.model.projects[row].name
-        return cell
+    # def update_ui(self, project_list_model: ProjectListModel):
+    #     self.model = project_list_model
+    #     self.display_content()
+    #     # is there a better way to do below?
+    #     self.content.table_view.reload_data()
+
+    # def tableview_number_of_rows(self, tableview, section):
+    #     return len(self.model.projects)
+
+    # def tableview_cell_for_row(self, tableview, section, row):
+    #     cell = ui.TableViewCell('subtitle')
+    #     cell.text_label.text = self.model.projects[row].name
+    #     return cell
     

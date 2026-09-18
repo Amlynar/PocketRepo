@@ -2,8 +2,6 @@ import ui
 
 class PRBaseScreen(ui.View):
     def __init__(self):
-        self.model = None
-        self.view = None
         self.loading_spinner = None
         self.content = None
         self.error = None
