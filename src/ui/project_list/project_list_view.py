@@ -1,5 +1,6 @@
 from src.ui.base.base_screen import PRBaseScreen
 from src.ui.project_list.project_list_model import ProjectListModel
+from src.ui.project_list.widget.project_list_content import ProjectListContent
 import ui
 
 class ProjectListView(PRBaseScreen):
@@ -7,6 +8,7 @@ class ProjectListView(PRBaseScreen):
         super().__init__()
         
         self.model = ProjectListModel()
+
         # self.table_view = ui.TableView()
         
         # self.table_view.data_source = self
@@ -19,6 +21,10 @@ class ProjectListView(PRBaseScreen):
     def layout(self):
         super().layout()
         # self.table_view.frame = (0, 0, self.width, self.height)
+
+    def display_content(self):
+        content = ProjectListContent(data_source=self,delegate=self)
+        self.show_content(content)
 
     def did_load(self):
         print("ProjectListView did load.")

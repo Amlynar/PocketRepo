@@ -25,6 +25,11 @@ class ProjectListController(PRBaseController):
         # self.view.update_ui(self.model)
 
         
-
+    @ui.in_background
     def on_screen_loaded(self):
-        self.view.show_loading_spinner()
+        self.view.show_loading()
+        self.catalog_repository.load_catalog()
+        self.model.projects = self.catalog_repository.get_all_projects()
+        self.view.update_ui(self.model)
+        
+
