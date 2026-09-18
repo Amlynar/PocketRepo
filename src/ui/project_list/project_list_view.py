@@ -17,8 +17,8 @@ class ProjectListView(PRBaseScreen):
         
 
     def display_content(self):
-        self.content = ProjectListContent(data_source=self.source,delegate=self.source)
-        self.show_content(self.content)
+        content = ProjectListContent(data_source=self.source,delegate=self.source)
+        self.show_content(content)
         self.content.table_view.reload_data()
 
         
