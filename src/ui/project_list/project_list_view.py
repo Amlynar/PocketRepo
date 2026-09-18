@@ -7,11 +7,15 @@ class ProjectListView(PRBaseScreen):
         super().__init__()
         
         self.model = ProjectListModel()
-        self.table_view = ui.TableView()
+        # self.table_view = ui.TableView()
         
-        self.table_view.data_source = self
-        self.table_view.delegate = self
-        self.add_subview(self.table_view)
+        # self.table_view.data_source = self
+        # self.table_view.delegate = self
+        # self.add_subview(self.table_view)
+
+    def layout(self):
+        super().layout()
+        # self.table_view.frame = (0, 0, self.width, self.height)
 
     def did_load(self):
         print("ProjectListView did load.")
