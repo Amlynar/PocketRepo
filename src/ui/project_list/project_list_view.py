@@ -32,6 +32,7 @@ class ProjectListView(PRBaseScreen):
 
     def update_ui(self, project_list_model: ProjectListModel):
         self.model = project_list_model
+        self.display_content()
         # is there a better way to do below?
         self.content.table_view.reload_data()
 
