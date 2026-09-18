@@ -17,12 +17,12 @@ class ProjectListView(PRBaseScreen):
         self.root_view.background_color = "green"
         self.root_view.flex = 'WH'
 
-        # self.label = ui.Label()
-        # self.label.text = "Text Label"
-        # self.label.background_color = "black"
-        # self.label.text_color = "white"
-        # self.label.flex = "WH"
-        # self.label.alignment = 1
+        self.label = ui.Label()
+        self.label.text = "Text Label"
+        self.label.background_color = "black"
+        self.label.text_color = "white"
+        self.label.flex = "WH"
+        self.label.alignment = 1
         # self.root_view.add_subview(self.label)
 
         self.table_view = ui.TableView()
@@ -32,7 +32,7 @@ class ProjectListView(PRBaseScreen):
         # self.root_view.add_subview(self.table_view)
 
     def display_content(self):
-        self.show_content(self.root_view)
+        self.show_content(self.label)
         self.table_view.reload_data()
 
 
