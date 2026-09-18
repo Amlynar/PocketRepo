@@ -1,4 +1,4 @@
-
+import ui
 from injector import inject
 
 from src.ui.base.base_controller import PRBaseController
