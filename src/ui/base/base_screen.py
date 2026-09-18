@@ -49,5 +49,6 @@ class PRBaseScreen(ui.View):
         print("layout called")
         if self.spinner:
             print("spinner location set")
+            print(f"width:{self.width} height:{self.height}")
             # FIX 2: Un-comment this line to handle device rotations dynamically
             self.spinner.center = (self.width * 0.5, self.height * 0.5)
