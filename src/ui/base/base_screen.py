@@ -11,9 +11,12 @@ class PRBaseScreen(ui.View):
         super().__init__()
 
     def layout(self):
-        self.content.frame = (0, 0, self.width, self.height)
-    #     if self.loading_spinner:
-    #         self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
+        if self.loading_spinner:
+            self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
+        if self.content:
+            self.content.frame = (0, 0, self.width, self.height)
+        if self.error:
+            self.error.frame (0, 0, self.width, self.height)
 
     def show_loading(self):
         if self.loading_spinner:
