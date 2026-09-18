@@ -1,9 +1,9 @@
 
 from injector import inject
 
-from src.screens.base.base_controller import PRBaseController
-from src.screens.project_list.project_list_model import ProjectListModel
-from src.screens.project_list.project_list_view import ProjectListView
+from src.ui.base.base_controller import PRBaseController
+from src.ui.project_list.project_list_model import ProjectListModel
+from src.ui.project_list.project_list_view import ProjectListView
 from src.common.repositories.catalog_repo import CatalogRepository
 from src.common.services.project_update_service import ProjectUpdateService
 

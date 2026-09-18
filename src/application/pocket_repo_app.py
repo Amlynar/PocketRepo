@@ -1,10 +1,10 @@
 from injector import Injector, inject
 
-from src.screens.base.base_controller import PRBaseController
+from src.ui.base.base_controller import PRBaseController
 from src.navigation.navigation_route import PRNavigation, PRNavigationRoute, ProjectListScreenRoute
 from src.navigation.navigation_manager import NavigationManager
-from src.screens.project_list.project_list_controller import ProjectListController
-from src.screens.project_list.project_list_view import ProjectListView
+from src.ui.project_list.project_list_controller import ProjectListController
+from src.ui.project_list.project_list_view import ProjectListView
 from src.common.repositories.catalog_repo import CatalogRepository
 
 

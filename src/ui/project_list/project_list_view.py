@@ -1,5 +1,5 @@
-from src.screens.base.base_screen import PRBaseScreen
-from src.screens.project_list.project_list_model import ProjectListModel
+from src.ui.base.base_screen import PRBaseScreen
+from src.ui.project_list.project_list_model import ProjectListModel
 import ui
 
 class ProjectListView(PRBaseScreen):

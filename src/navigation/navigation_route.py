@@ -3,8 +3,8 @@ from collections.abc import Callable
 
 from injector import Injector
 
-from src.screens.base.base_controller import PRBaseController
-from src.screens.project_list.project_list_controller import ProjectListController
+from src.ui.base.base_controller import PRBaseController
+from src.ui.project_list.project_list_controller import ProjectListController
 
 
 class PRNavigation:
