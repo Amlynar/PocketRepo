@@ -28,11 +28,8 @@ class ProjectListController(PRBaseController):
         self.view.display_content()
         
     def tableview_number_of_rows(self, tableview, section):
-        print("num of rows")
         return len(self.model.projects)
     
     def tableview_cell_for_row(self, tableview, section, row):
-        print("cell for row")
-        cell = ui.TableViewCell('subtitle')
-        cell.text_label.text = self.model.projects[row].name
-        return cell
+        project = self.model.projects[row]
+        return self.view.init_table_cell(name=project.name)

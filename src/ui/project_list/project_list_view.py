@@ -1,7 +1,7 @@
+import ui
+
 from src.ui.base.base_screen import PRBaseScreen
 from src.ui.project_list.project_list_model import ProjectListModel
-from src.ui.project_list.widget.project_list_content import ProjectListContent
-import ui
 
 class ProjectListView(PRBaseScreen):
     def __init__(self):
@@ -21,8 +21,12 @@ class ProjectListView(PRBaseScreen):
 
         self.root_view.add_subview(self.table_view)
 
+    def init_table_cell(self, name: str) -> ui.TableViewCell:
+        cell = ui.TableViewCell('subtitle')
+        cell.text_label.text = name
+        return cell
+
     def display_content(self):
         self.show_content(self.root_view)
         self.table_view.reload_data()
         
-    
