@@ -14,9 +14,7 @@ class PRBaseScreen(ui.View):
         if self.spinner:
             return  # Spinner is already active
             
-        print("Showing loading spinner...")
         self.spinner = ui.ActivityIndicator()
-        print("ActivityIndicator created.")
         
         # Choose style: 'gray', 'white', or 'white_large'
         # self.spinner.style = ui.ACTIVITY_INDICATOR_STYLE_WHITE_LARGE
@@ -30,15 +28,11 @@ class PRBaseScreen(ui.View):
         # Center it immediately on creation for the initial frame draw
         self.spinner.center = (self.width * 0.5, self.height * 0.5)
         
-        print("set styles and size")
         self.spinner.hides_when_stopped = True
-        print("hides when stopped")
         
         self.add_subview(self.spinner)
-        print("added subview")
         
         self.spinner.start()
-        print("Loading spinner shown.")
 
     def hide_loading_spinner(self):
         if self.spinner:
@@ -49,7 +43,4 @@ class PRBaseScreen(ui.View):
     def layout(self):
         print("layout called")
         if self.spinner:
-            print("spinner location set")
-            print(f"width:{self.width} height:{self.height}")
-            # FIX 2: Un-comment this line to handle device rotations dynamically
             self.spinner.center = (self.width * 0.5, self.height * 0.5)
