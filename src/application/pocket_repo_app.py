@@ -17,7 +17,7 @@ class PocketRepoApp:
         self.navigation = PYINavigationDelegate()
         self.navigation.navigate = self.navigate
 
-        self.current_controller = None
+        self.current_controller: PYIController | None = None
 
     def run(self):
 
@@ -29,7 +29,8 @@ class PocketRepoApp:
     def navigate(self, route: PYIRoute):
         controller = self.get_and_decorate_controller(route)
         self.navigation_manager.push_screen(controller.view)
-        self.current_controller.on_screen_loaded()
+        if self.current_controller:
+            self.current_controller.on_screen_loaded()
 
     def get_and_decorate_controller(self, route: PYIRoute) -> PYIController:
         self.current_controller = self.to_controller(self.injector,route)
