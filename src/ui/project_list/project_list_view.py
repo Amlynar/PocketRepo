@@ -4,7 +4,7 @@ import ui
 
 from src.framework.mvc.screen import PYIScreen
 from src.ui.project_list.project_list_model import ProjectListModel
-from ui.style.theme import PRTheme
+from src.ui.style.theme import PRTheme
 
 class ProjectListView(PYIScreen):
     @inject
