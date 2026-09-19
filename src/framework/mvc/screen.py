@@ -1,3 +1,4 @@
+from src.framework.style.theme import PYITheme
 import ui
 
 class PYIScreen(ui.View):
@@ -5,9 +6,9 @@ class PYIScreen(ui.View):
         self.loading_spinner = None
         self.content = None
         self.error = None
-        self.background_color = 'blue'
+        
         self.flex = 'WH'
-        # self.flex = 'LRTB'
+        self.set_theme(PYITheme())
         super().__init__()
 
     def layout(self):
@@ -18,14 +19,18 @@ class PYIScreen(ui.View):
         if self.error:
             self.error.frame (0, 0, self.width, self.height)
 
+    def set_theme(self, theme: PYITheme):
+        self.theme = theme
+        self.background_color = self.theme.background_color_primary
+
     def show_loading(self):
         if self.loading_spinner:
             return
         self.hide_all_displayed()
             
         self.loading_spinner = ui.ActivityIndicator()
-        self.loading_spinner.style = ui.ACTIVITY_INDICATOR_STYLE_GRAY
-        self.loading_spinner.color = '#333333' # Dark gray spinner color
+        self.loading_spinner.style = self.theme.spinner_style
+        # self.loading_spinner.color = '#333333' # Dark gray spinner color
         self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
         # self.loading_spinner.alignment = ui.ALIGN_CENTER
         self.loading_spinner.hides_when_stopped = True
