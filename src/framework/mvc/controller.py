@@ -10,7 +10,7 @@ class PYIController():
         self.view: PYIController | None
 
     def navigate(self, route: PYIRoute):
-        if self.navigation is not None and self.navigation.navigate is not None:
+        if self.navigation and self.navigation.navigate:
             self.navigation.navigate(route)
 
     def on_screen_loaded(self):
