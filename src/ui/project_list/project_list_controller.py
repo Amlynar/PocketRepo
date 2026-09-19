@@ -1,13 +1,13 @@
 import ui
 from injector import inject
 
-from src.framework.mvc.controller import PRBaseController
+from src.framework.mvc.controller import PYIController
 from src.ui.project_list.project_list_model import ProjectListModel
 from src.ui.project_list.project_list_view import ProjectListView, ProjectListItemProvider
 from src.common.repositories.catalog_repo import CatalogRepository
 from src.common.services.project_update_service import ProjectUpdateService
 import time
-class ProjectListController(PRBaseController):
+class ProjectListController(PYIController):
 
     @inject
     def __init__(self, model: ProjectListModel, view: ProjectListView, item_provider: ProjectListItemProvider, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):

@@ -1,9 +1,9 @@
 import ui
 
-from src.framework.mvc.screen import PRBaseScreen
+from src.framework.mvc.screen import PYIScreen
 from src.ui.project_list.project_list_model import ProjectListModel
 
-class ProjectListView(PRBaseScreen):
+class ProjectListView(PYIScreen):
     def __init__(self):
         super().__init__()
         self.root_view = None

@@ -1,6 +1,6 @@
 import ui
 
-class PRBaseScreen(ui.View):
+class PYIScreen(ui.View):
     def __init__(self):
         self.loading_spinner = None
         self.content = None

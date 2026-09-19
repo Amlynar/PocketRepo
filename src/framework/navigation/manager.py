@@ -1,6 +1,6 @@
 import ui
 
-class NavigationManager:
+class PYINavigationManager:
 
     def __init__(self, intial_view: ui.View):
         self.root_view = intial_view

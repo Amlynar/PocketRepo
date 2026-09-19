@@ -1,13 +1,13 @@
 
 from collections.abc import Callable
 
-class PRNavigation:
+class PYINavigationDelegate:
     def __init__(self):
-        self.navigate: Callable[[PRNavigationRoute], None] | None = None
+        self.navigate: Callable[[PYIRoute], None] | None = None
         
 # Routes
 
-class PRNavigationRoute: pass
+class PYIRoute: pass
 
-class ProjectListScreenRoute(PRNavigationRoute): pass
+class ProjectListScreenRoute(PYIRoute): pass
 

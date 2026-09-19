@@ -2,7 +2,7 @@
 from abc import abstractmethod
 
 
-class PRBaseController:
+class PYIController:
 
     def __init__(self):
         self.navigation = None
