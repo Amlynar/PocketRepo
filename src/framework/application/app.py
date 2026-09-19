@@ -1,4 +1,5 @@
 
+from src.framework.style.theme import PYITheme
 from src.framework.navigation.manager import PYINavigationManager
 from src.framework.mvc.controller import PYIController
 from src.framework.navigation.navigator import PYINavigationDelegate, PYIRoute
@@ -19,7 +20,7 @@ class PYIApp:
     def map_route_to_controller(self, route: PYIRoute) -> PYIController:
         raise NotImplemented("PYIApp to_controller() not implemented")
 
-    def present_intial_route(self, intial_route: PYIRoute):
+    def present_intial_route(self, intial_route: PYIRoute, theme:PYITheme=PYITheme()):
         controller = self.get_and_decorate_controller(intial_route)
         self.navigation_manager = PYINavigationManager(intial_view=controller.view)
         self.navigation_manager.present()

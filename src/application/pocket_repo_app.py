@@ -19,7 +19,8 @@ class PocketRepoApp(PYIApp):
 
 
     def run(self):
-        self.present_intial_route(ProjectListScreenRoute())
+        theme = self.injector.get(PRTheme)
+        self.present_intial_route(ProjectListScreenRoute(),theme)
 
 
     def map_route_to_controller(self, route: PYIRoute) -> PYIController:
