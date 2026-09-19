@@ -31,7 +31,7 @@ class ProjectListView(PYIScreen):
 
         self.table_view = ui.TableView()
         self.table_view.flex = 'WH'
-        self.table_view.background_color = self.theme.screen_background_color
+        self.table_view.background_color = self.theme.view_background_color
         self.table_view.data_source = data_source
         self.table_view.delegate = data_source
         self.root_view.add_subview(self.table_view)
@@ -42,11 +42,13 @@ class ProjectListView(PYIScreen):
 
 
 class ProjectListItemProvider():
-    def __init__(self):
-        pass
+    @inject
+    def __init__(self, theme: PRTheme):
+        self.theme = theme
 
     def create(self, name: str) -> ui.TableViewCell:
         cell = ui.TableViewCell('subtitle')
+        cell.background_color = self.theme.view_background_color
         cell.flex = 'WH'
         cell.text_label.text = name
         return cell

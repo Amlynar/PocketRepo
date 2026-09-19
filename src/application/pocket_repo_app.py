@@ -37,7 +37,5 @@ class AppModule(Module):
     def provide_theme(self) -> PRTheme:
         return (
             PRThemeBuilder()
-            .set_background_color('red')
-            .set_navigation_bar_background_color('blue')
             .build()
         )
