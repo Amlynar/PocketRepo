@@ -31,8 +31,13 @@ class PocketRepoApp:
         self.current_controller.on_screen_loaded()
 
     def get_and_decorate_controller(self, route: PRNavigationRoute) -> PRBaseController:
-        self.current_controller = route.to_controller(self.injector)
+        self.current_controller = self.to_controller(self.injector,route)
         self.current_controller.navigation = self.navigation
         return self.current_controller
 
-
+    def to_controller(self, injector: Injector, route: PRNavigationRoute) -> PRBaseController:
+        match route:
+            case ProjectListScreenRoute():
+                return injector.get(ProjectListController)
+            case _:
+                raise ValueError(f"Unknown route: {self}")
