@@ -23,6 +23,7 @@ class PYIApp:
     def present_intial_route(self, intial_route: PYIRoute, theme:PYITheme=PYITheme()):
         controller = self.get_and_decorate_controller(intial_route)
         self.navigation_manager = PYINavigationManager(intial_view=controller.view)
+        self.navigation_manager.set_theme(theme)
         self.navigation_manager.present()
         self.current_controller = controller
         self.current_controller.on_screen_loaded()
