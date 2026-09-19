@@ -13,7 +13,7 @@ class PocketRepoApp:
     def __init__(self):
         self.injector = Injector()
 
-        self.navigation = PRNavigation()
+        self.navigation = PRNavigation[ProjectListScreenRoute]()
         self.navigation.navigate = self.navigate
 
         self.current_controller = None
