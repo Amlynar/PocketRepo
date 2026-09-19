@@ -1,6 +1,6 @@
 from injector import Injector, inject
 
-from framework.application.app import PYIApp
+from src.framework.application.app import PYIApp
 from src.navigation.routes import ProjectListScreenRoute
 from src.framework.mvc.controller import PYIController
 from src.framework.navigation.navigator import PYINavigationDelegate, PYIRoute
