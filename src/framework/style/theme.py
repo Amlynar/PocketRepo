@@ -4,7 +4,7 @@ class PYITheme:
 
     def __init__(self):
         self.screen_background_color = 'white'
-        self.navigation_bar_background_color = 'blue'
+        self.navigation_bar_background_color = '#E5E7EB'
         self.spinner_style = ui.ACTIVITY_INDICATOR_STYLE_GRAY
 
 class PYIThemeBuilder:
