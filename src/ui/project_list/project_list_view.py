@@ -13,7 +13,6 @@ class ProjectListView(PYIScreen):
         # self.root_view.frame = (0, 0, self.width, self.height)
         
     def init_root_view(self, data_source):
-        self.root_view = ui.View()
         # self.root_view.background_color = "green"
         # self.root_view.flex = 'WH'
 

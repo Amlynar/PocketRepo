@@ -6,7 +6,9 @@ class PYIScreen(ui.View):
         self.loading_spinner = None
         self.content = None
         self.error = None
-        
+
+        self.root_view: ui.View = ui.View()
+        self.root_view.flex = 'WH'
         self.flex = 'WH'
         self.set_theme(PYITheme())
         super().__init__()
@@ -22,6 +24,7 @@ class PYIScreen(ui.View):
     def set_theme(self, theme: PYITheme):
         self.theme = theme
         self.background_color = self.theme.background_color_primary
+        self.root_view.background_color = self.theme.background_color_primary
 
     def show_loading(self):
         if self.loading_spinner:
