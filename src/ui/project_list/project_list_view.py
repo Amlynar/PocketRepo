@@ -31,6 +31,7 @@ class ProjectListView(PYIScreen):
 
         self.table_view = ui.TableView()
         self.table_view.flex = 'WH'
+        self.table_view.background_color = self.theme.screen_background_color
         self.table_view.data_source = data_source
         self.table_view.delegate = data_source
         self.root_view.add_subview(self.table_view)
