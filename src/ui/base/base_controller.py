@@ -1,14 +1,11 @@
 
 from abc import abstractmethod
-from typing import Generic, TypeVar
 
-from src.navigation.navigation_route import PRNavigation
 
-T = TypeVar("T")
-class PRBaseController(Generic[T]):
+class PRBaseController:
 
     def __init__(self):
-        self.navigation: PRNavigation[T] | None = None
+        self.navigation = None
 
     @abstractmethod
     def on_screen_loaded(self):
@@ -16,6 +13,3 @@ class PRBaseController(Generic[T]):
         Called when the screen is presented to ui.
         """
         pass
-
-    def navigate(self, route: T):
-        self.navigation.navigate(route)
