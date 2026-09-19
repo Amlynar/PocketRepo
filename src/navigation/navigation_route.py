@@ -1,16 +1,15 @@
 
 from collections.abc import Callable
-from typing import Generic, TypeVar
 
 from injector import Injector
 
 from src.ui.base.base_controller import PRBaseController
 from src.ui.project_list.project_list_controller import ProjectListController
 
-T = TypeVar("T")
-class PRNavigation(Generic[T]):
+
+class PRNavigation:
     def __init__(self):
-        self.navigate: Callable[[T], None] | None = None
+        self.navigate: Callable[[PRNavigationRoute], None] | None = None
         
 # Routes
 

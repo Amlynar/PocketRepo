@@ -7,6 +7,7 @@ class PRBaseScreen(ui.View):
         self.error = None
         self.background_color = 'blue'
         self.flex = 'WH'
+        # self.flex = 'LRTB'
         super().__init__()
 
     def layout(self):
