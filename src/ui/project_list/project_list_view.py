@@ -1,6 +1,6 @@
 import ui
 
-from src.ui.base.base_screen import PRBaseScreen
+from framework.mvc.base_screen import PRBaseScreen
 from src.ui.project_list.project_list_model import ProjectListModel
 
 class ProjectListView(PRBaseScreen):
