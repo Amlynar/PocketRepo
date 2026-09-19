@@ -6,7 +6,6 @@ from src.ui.project_list.project_list_model import ProjectListModel
 class ProjectListView(PYIScreen):
     def __init__(self):
         super().__init__()
-        self.root_view = None
 
     def layout(self):
         super().layout()
