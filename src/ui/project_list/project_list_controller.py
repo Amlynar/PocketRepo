@@ -1,3 +1,4 @@
+from src.navigation.navigation_route import PRNavigationRoute, ProjectListScreenRoute
 import ui
 from injector import inject
 
@@ -7,7 +8,7 @@ from src.ui.project_list.project_list_view import ProjectListView, ProjectListIt
 from src.common.repositories.catalog_repo import CatalogRepository
 from src.common.services.project_update_service import ProjectUpdateService
 import time
-class ProjectListController(PRBaseController):
+class ProjectListController(PRBaseController[PRNavigationRoute]):
 
     @inject
     def __init__(self, model: ProjectListModel, view: ProjectListView, item_provider: ProjectListItemProvider, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):
@@ -28,6 +29,8 @@ class ProjectListController(PRBaseController):
         self.catalog_repository.load_catalog()
         self.model.projects = self.catalog_repository.get_all_projects()
         self.view.display_content()
+        # self.navigation.navigate(ProjectListScreenRoute())
+        self.navigate(ProjectListScreenRoute())
         
     def tableview_number_of_rows(self, tableview, section):
         return len(self.model.projects)
