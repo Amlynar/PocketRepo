@@ -12,7 +12,7 @@ class PYINavigationManager:
 
     def set_theme(self, theme: PYITheme):
         self.theme = theme
-        self.nav_view.background_color = self.theme.background_color_primary
+        self.nav_view.background_color = self.theme.navigation_bar_background_color
 
     def push_screen(self, next_view: ui.View):
         self.nav_view.push_view(next_view)

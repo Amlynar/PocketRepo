@@ -23,8 +23,8 @@ class PYIScreen(ui.View):
 
     def set_theme(self, theme: PYITheme):
         self.theme = theme
-        self.background_color = self.theme.background_color_primary
-        self.root_view.background_color = self.theme.background_color_primary
+        self.background_color = self.theme.screen_background_color
+        self.root_view.background_color = self.theme.screen_background_color
 
     def show_loading(self):
         if self.loading_spinner:
