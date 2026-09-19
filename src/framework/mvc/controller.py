@@ -1,5 +1,6 @@
 
 
+from src.framework.mvc.screen import PYIScreen
 from src.framework.navigation.navigator import PYINavigationDelegate, PYIRoute
 
 
@@ -7,7 +8,7 @@ class PYIController():
 
     def __init__(self):
         self.navigation: PYINavigationDelegate | None = None
-        self.view: PYIController | None
+        self.view: PYIScreen | None
 
     def navigate(self, route: PYIRoute):
         if self.navigation and self.navigation.navigate:

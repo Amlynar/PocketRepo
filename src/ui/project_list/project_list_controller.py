@@ -24,6 +24,8 @@ class ProjectListController(PYIController):
         
     @ui.in_background
     def on_screen_loaded(self):
+        if self.view is None:
+            raise ValueError("self.view should not be None")
         self.view.show_loading()
         time.sleep(3)
         self.catalog_repository.load_catalog()

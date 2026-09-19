@@ -28,36 +28,3 @@ class PocketRepoApp(PYIApp):
             case _:
                 raise ValueError(f"Unknown route: {self}")
 
-
-    # def __init__(self):
-    #     self.injector = Injector()
-
-    #     self.navigation = PYINavigationDelegate()
-    #     self.navigation.navigate = self.navigate
-
-    #     self.current_controller: PYIController | None = None
-
-    # def run(self):
-
-    #     self.current_controller = self.get_and_decorate_controller(ProjectListScreenRoute())
-    #     self.navigation_manager = PYINavigationManager(intial_view=self.current_controller.view)
-    #     self.navigation_manager.present()
-    #     self.current_controller.on_screen_loaded()
-
-    # def navigate(self, route: PYIRoute):
-    #     controller = self.get_and_decorate_controller(route)
-    #     self.navigation_manager.push_screen(controller.view)
-    #     if self.current_controller:
-    #         self.current_controller.on_screen_loaded()
-
-    # def get_and_decorate_controller(self, route: PYIRoute) -> PYIController:
-    #     self.current_controller = self.to_controller(self.injector,route)
-    #     self.current_controller.navigation = self.navigation
-    #     return self.current_controller
-
-    # def to_controller(self, injector: Injector, route: PYIRoute) -> PYIController:
-    #     match route:
-    #         case ProjectListScreenRoute():
-    #             return injector.get(ProjectListController)
-    #         case _:
-    #             raise ValueError(f"Unknown route: {self}")
