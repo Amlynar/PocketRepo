@@ -29,7 +29,6 @@ class ProjectListController(PYIController):
         self.catalog_repository.load_catalog()
         self.model.projects = self.catalog_repository.get_all_projects()
         self.view.display_content()
-        self.navigate(ProjectListScreenRoute())
         
     def tableview_number_of_rows(self, tableview, section):
         return len(self.model.projects)

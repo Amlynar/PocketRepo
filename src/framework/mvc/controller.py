@@ -1,10 +1,10 @@
 
-from abc import abstractmethod
+# from abc import ABC, abstractmethod
 
 from src.framework.navigation.navigator import PYINavigationDelegate, PYIRoute
 
 
-class PYIController:
+class PYIController():
 
     def __init__(self):
         self.navigation: PYINavigationDelegate | None = None
@@ -13,7 +13,7 @@ class PYIController:
         if self.navigation is not None and self.navigation.navigate is not None:
             self.navigation.navigate(route)
 
-    @abstractmethod
+    # @abstractmethod
     def on_screen_loaded(self):
         """
         Called when the screen is presented to ui.
