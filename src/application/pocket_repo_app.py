@@ -1,7 +1,8 @@
 from injector import Injector, inject
 
+from src.navigation.routes import ProjectListScreenRoute
 from src.framework.mvc.controller import PYIController
-from src.framework.navigation.navigator import PYINavigationDelegate, PYIRoute, ProjectListScreenRoute
+from src.framework.navigation.navigator import PYINavigationDelegate, PYIRoute
 from src.framework.navigation.manager import PYINavigationManager
 from src.ui.project_list.project_list_controller import ProjectListController
 from src.ui.project_list.project_list_view import ProjectListView

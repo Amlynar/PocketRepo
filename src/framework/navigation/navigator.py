@@ -8,6 +8,3 @@ class PYINavigationDelegate:
 # Routes
 
 class PYIRoute: pass
-
-class ProjectListScreenRoute(PYIRoute): pass
-
