@@ -15,7 +15,7 @@ class PocketRepoApp(PYIApp):
 
     def __init__(self):
         super().__init__()
-        self.injector = Injector()
+        self.injector = Injector(AppModule())
 
 
     def run(self):
