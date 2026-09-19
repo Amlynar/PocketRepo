@@ -1,7 +1,7 @@
 import ui
 from injector import inject
 
-from framework.mvc.base_controller import PRBaseController
+from src.framework.mvc.base_controller import PRBaseController
 from src.ui.project_list.project_list_model import ProjectListModel
 from src.ui.project_list.project_list_view import ProjectListView, ProjectListItemProvider
 from src.common.repositories.catalog_repo import CatalogRepository
