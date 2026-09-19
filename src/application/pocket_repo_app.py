@@ -1,5 +1,6 @@
 from injector import Injector, inject
 
+from framework.application.app import PYIApp
 from src.navigation.routes import ProjectListScreenRoute
 from src.framework.mvc.controller import PYIController
 from src.framework.navigation.navigator import PYINavigationDelegate, PYIRoute
@@ -9,37 +10,54 @@ from src.ui.project_list.project_list_view import ProjectListView
 from src.common.repositories.catalog_repo import CatalogRepository
 
 
-class PocketRepoApp:
+class PocketRepoApp(PYIApp):
 
     def __init__(self):
+        super().__init__()
         self.injector = Injector()
 
-        self.navigation = PYINavigationDelegate()
-        self.navigation.navigate = self.navigate
-
-        self.current_controller: PYIController | None = None
 
     def run(self):
+        self.present_intial_route(ProjectListScreenRoute())
 
-        self.current_controller = self.get_and_decorate_controller(ProjectListScreenRoute())
-        self.navigation_manager = PYINavigationManager(intial_view=self.current_controller.view)
-        self.navigation_manager.present()
-        self.current_controller.on_screen_loaded()
 
-    def navigate(self, route: PYIRoute):
-        controller = self.get_and_decorate_controller(route)
-        self.navigation_manager.push_screen(controller.view)
-        if self.current_controller:
-            self.current_controller.on_screen_loaded()
-
-    def get_and_decorate_controller(self, route: PYIRoute) -> PYIController:
-        self.current_controller = self.to_controller(self.injector,route)
-        self.current_controller.navigation = self.navigation
-        return self.current_controller
-
-    def to_controller(self, injector: Injector, route: PYIRoute) -> PYIController:
+    def map_route_to_controller(self, route: PYIRoute) -> PYIController:
         match route:
             case ProjectListScreenRoute():
-                return injector.get(ProjectListController)
+                return self.injector.get(ProjectListController)
             case _:
                 raise ValueError(f"Unknown route: {self}")
+
+
+    # def __init__(self):
+    #     self.injector = Injector()
+
+    #     self.navigation = PYINavigationDelegate()
+    #     self.navigation.navigate = self.navigate
+
+    #     self.current_controller: PYIController | None = None
+
+    # def run(self):
+
+    #     self.current_controller = self.get_and_decorate_controller(ProjectListScreenRoute())
+    #     self.navigation_manager = PYINavigationManager(intial_view=self.current_controller.view)
+    #     self.navigation_manager.present()
+    #     self.current_controller.on_screen_loaded()
+
+    # def navigate(self, route: PYIRoute):
+    #     controller = self.get_and_decorate_controller(route)
+    #     self.navigation_manager.push_screen(controller.view)
+    #     if self.current_controller:
+    #         self.current_controller.on_screen_loaded()
+
+    # def get_and_decorate_controller(self, route: PYIRoute) -> PYIController:
+    #     self.current_controller = self.to_controller(self.injector,route)
+    #     self.current_controller.navigation = self.navigation
+    #     return self.current_controller
+
+    # def to_controller(self, injector: Injector, route: PYIRoute) -> PYIController:
+    #     match route:
+    #         case ProjectListScreenRoute():
+    #             return injector.get(ProjectListController)
+    #         case _:
+    #             raise ValueError(f"Unknown route: {self}")
