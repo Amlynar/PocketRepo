@@ -1,4 +1,4 @@
-from injector import Injector, inject
+from injector import Injector, inject, Module, provider, singleton, Injector
 
 from src.framework.application.app import PYIApp
 from src.navigation.routes import ProjectListScreenRoute
@@ -8,6 +8,7 @@ from src.framework.navigation.manager import PYINavigationManager
 from src.ui.project_list.project_list_controller import ProjectListController
 from src.ui.project_list.project_list_view import ProjectListView
 from src.common.repositories.catalog_repo import CatalogRepository
+from src.ui.style.theme import PRTheme, PRThemeBuilder
 
 
 class PocketRepoApp(PYIApp):
@@ -28,3 +29,14 @@ class PocketRepoApp(PYIApp):
             case _:
                 raise ValueError(f"Unknown route: {self}")
 
+class AppModule(Module):
+
+    @singleton
+    @provider
+    def provide_theme(self) -> PRTheme:
+        return (
+            PRThemeBuilder()
+            .set_background_color('blue')
+            .set_navigation_bar_background_color('red')
+            .build()
+        )

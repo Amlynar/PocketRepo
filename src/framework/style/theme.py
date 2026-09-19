@@ -23,4 +23,7 @@ class PYIThemeBuilder:
     def set_spinner_style(self, style):
         self.theme.spinner_style = style
         return self
+
+    def build(self) -> PYITheme:
+        return self.theme
     
