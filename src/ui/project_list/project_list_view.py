@@ -11,7 +11,6 @@ class ProjectListView(PYIScreen):
     def __init__(self, theme: PRTheme):
         super().__init__()
         self.set_theme(theme)
-        print(f"screen:{theme.screen_background_color} nav:{theme.navigation_bar_background_color}")
 
     def layout(self):
         super().layout()

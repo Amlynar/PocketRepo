@@ -37,6 +37,6 @@ class AppModule(Module):
     def provide_theme(self) -> PRTheme:
         return (
             PRThemeBuilder()
-            .set_screen_background_color('red')
+            # .set_screen_background_color('red')
             .build()
         )
