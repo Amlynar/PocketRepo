@@ -3,6 +3,7 @@ from common.services.project_update_service import ProjectUpdateService
 from framework.mvc.controller import PYIController
 from framework.style.style_table_view_cell import PYITableViewCellStyle
 from framework.style.theme import PYITheme
+from navigation.routes import ProjectDetailsScreenRoute
 from screens.project_list.project_list_model import ProjectListModel
 from screens.project_list.project_list_view import ProjectListView
 import ui
@@ -44,4 +45,4 @@ class ProjectListController(PYIController):
 
     def tableview_did_select(self, tableview, section, row):
         project = self.model.projects[row]
-        print(f"Selected project: {project.name}")
+        self.navigate(ProjectDetailsScreenRoute(project_id=project.id))
