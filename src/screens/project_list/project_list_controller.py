@@ -1,13 +1,13 @@
+from common.services.project_update_service import ProjectUpdateService
+from framework.mvc.controller import PYIController
+from screens.project_list.project_list_model import ProjectListModel
+from screens.project_list.project_list_view import ProjectListItemProvider, ProjectListView
 import ui
 from injector import inject
 
-from framework.mvc.controller import PYIController
-from screens.project_list.project_list_model import ProjectListModel
-from screens.project_list.project_list_view import ProjectListView, ProjectListItemProvider
-from common.repositories.catalog_repo import CatalogRepository
-from common.services.project_update_service import ProjectUpdateService
-from navigation.routes import ProjectListScreenRoute
+
 import time
+
 class ProjectListController(PYIController):
 
     @inject

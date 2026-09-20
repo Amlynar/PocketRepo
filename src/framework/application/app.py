@@ -1,8 +1,8 @@
 
-from framework.style.theme import PYITheme
-from framework.navigation.manager import PYINavigationManager
 from framework.mvc.controller import PYIController
+from framework.navigation.manager import PYINavigationManager
 from framework.navigation.navigator import PYINavigationDelegate, PYIRoute
+from framework.style.theme import PYITheme
 
 
 class PYIApp:

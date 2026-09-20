@@ -1,5 +1,4 @@
 
-
 from framework.mvc.screen import PYIScreen
 from framework.navigation.navigator import PYINavigationDelegate, PYIRoute
 
