@@ -6,8 +6,8 @@ from navigation.routes import ProjectListScreenRoute
 from framework.mvc.controller import PYIController
 from framework.navigation.navigator import PYINavigationDelegate, PYIRoute
 from framework.navigation.manager import PYINavigationManager
-from ui.project_list.project_list_controller import ProjectListController
-from ui.project_list.project_list_view import ProjectListView
+from screens.project_list.project_list_controller import ProjectListController
+from screens.project_list.project_list_view import ProjectListView
 from common.repositories.catalog_repo import CatalogRepository
 
 
