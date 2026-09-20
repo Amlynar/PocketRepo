@@ -37,12 +37,11 @@ class ProjectListController(PYIController):
     
     def tableview_cell_for_row(self, tableview, section, row):
         project = self.model.projects[row]
-        cell = ui.TableViewCell('subtitle')
-        PYITableViewCellStyle.subtitle(cell, self.theme)
+        cell = ui.TableViewCell('default')
+        PYITableViewCellStyle.navigation(cell, self.theme)
         cell.text_label.text = project.name
         return cell
 
     def tableview_did_select(self, tableview, section, row):
         project = self.model.projects[row]
         print(f"Selected project: {project.name}")
-        
