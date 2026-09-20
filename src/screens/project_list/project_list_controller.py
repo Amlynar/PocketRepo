@@ -1,3 +1,4 @@
+from common.repositories.catalog_repo import CatalogRepository
 from common.services.project_update_service import ProjectUpdateService
 from framework.mvc.controller import PYIController
 from screens.project_list.project_list_model import ProjectListModel
