@@ -1,8 +1,10 @@
 from common.repositories.catalog_repo import CatalogRepository
 from common.services.project_update_service import ProjectUpdateService
 from framework.mvc.controller import PYIController
+from framework.style.style_table_view_cell import PYITableViewCellStyle
+from framework.style.theme import PYITheme
 from screens.project_list.project_list_model import ProjectListModel
-from screens.project_list.project_list_view import ProjectListItemProvider, ProjectListView
+from screens.project_list.project_list_view import ProjectListView
 import ui
 from injector import inject
 
@@ -12,11 +14,11 @@ import time
 class ProjectListController(PYIController):
 
     @inject
-    def __init__(self, model: ProjectListModel, view: ProjectListView, item_provider: ProjectListItemProvider, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):
+    def __init__(self, model: ProjectListModel, view: ProjectListView, theme: PYITheme, project_update_service: ProjectUpdateService, catalog_repository: CatalogRepository):
         super().__init__()
         self.model = model
         self.view = view
-        self.item_provider = item_provider
+        self.theme = theme
         self.project_update_service = project_update_service
         self.catalog_repository = catalog_repository
 
@@ -38,4 +40,7 @@ class ProjectListController(PYIController):
     
     def tableview_cell_for_row(self, tableview, section, row):
         project = self.model.projects[row]
-        return self.item_provider.create(name=project.name)
+        cell = ui.TableViewCell('subtitle')
+        PYITableViewCellStyle.subtitle(cell, self.theme)
+        cell.text_label.text = project.name
+        return cell

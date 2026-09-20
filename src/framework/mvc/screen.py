@@ -1,18 +1,24 @@
 
+from framework.style.style_screen import PYIScreenStyle
+from framework.style.style_spinner import PYISpinnerStyle
+from framework.style.style_view import PYIViewStyle
 from framework.style.theme import PYITheme
 import ui
 
 
 class PYIScreen(ui.View):
-    def __init__(self):
+    def __init__(self, theme: PYITheme):
+        self.theme = theme
+        PYIScreenStyle.fullscreen(self,self.theme)
+
+        self.root_view: ui.View = ui.View()
+        PYIViewStyle.clear(self.root_view, self.theme)
+        self.root_view.flex = 'WH'
+
         self.loading_spinner = None
         self.content = None
         self.error = None
 
-        self.root_view: ui.View = ui.View()
-        self.root_view.flex = 'WH'
-        self.flex = 'WH'
-        self.set_theme(PYITheme())
         super().__init__()
 
     def layout(self):
@@ -23,22 +29,14 @@ class PYIScreen(ui.View):
         if self.error:
             self.error.frame (0, 0, self.width, self.height)
 
-    def set_theme(self, theme: PYITheme):
-        self.theme = theme
-        self.background_color = self.theme.screen_background_color
-        self.root_view.background_color = self.theme.view_background_color
-
     def show_loading(self):
         if self.loading_spinner:
             return
         self.hide_all_displayed()
             
         self.loading_spinner = ui.ActivityIndicator()
-        self.loading_spinner.style = self.theme.spinner_style
-        # self.loading_spinner.color = '#333333' # Dark gray spinner color
+        PYISpinnerStyle.fullscreen_loading(self.loading_spinner, self.theme)
         self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
-        # self.loading_spinner.alignment = ui.ALIGN_CENTER
-        self.loading_spinner.hides_when_stopped = True
         
         self.add_subview(self.loading_spinner)
         self.loading_spinner.start()

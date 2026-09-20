@@ -1,11 +1,12 @@
+from framework.style.color import PYIColor
 import ui
 
 class PYITheme:
 
     def __init__(self):
-        self.screen_background_color = 'white'
-        self.view_background_color = (1.0, 0.0, 0.0, 0.0)
-        self.navigation_bar_background_color = '#E5E7EB'
+        self.screen_background_color = PYIColor.WHITE
+        self.view_background_color = PYIColor.TRANSPARENT
+        self.navigation_bar_background_color = PYIColor.LIGHT_GRAY
         self.spinner_style = ui.ACTIVITY_INDICATOR_STYLE_GRAY
 
 class PYIThemeBuilder:
