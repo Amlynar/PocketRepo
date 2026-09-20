@@ -40,7 +40,7 @@ class ProjectListView(PYIScreen):
 
 class ProjectListItemProvider():
     @inject
-    def __init__(self, theme: PRTheme):
+    def __init__(self, theme: PYITheme):
         self.theme = theme
 
     def create(self, name: str) -> ui.TableViewCell:
