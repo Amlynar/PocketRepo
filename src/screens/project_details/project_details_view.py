@@ -14,3 +14,6 @@ class ProjectDetailsView(PYIScreen):
 
         self.title_label = ui.Label()
         self.title_label.text = ""
+        self.table_view.flex = 'WH'
+
+        

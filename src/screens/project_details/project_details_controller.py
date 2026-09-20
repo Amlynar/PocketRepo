@@ -22,4 +22,5 @@ class ProjectDetailsController(PYIController):
         if self.project_id is None:
             raise ValueError("project_id is None")
         self.view.title_label.text = f"Project ID:{self.project_id}"
-
+        self.view.root_view.add_subview(self.view.title_label)
+        self.view.show_content(self.view.root_view)
