@@ -11,7 +11,7 @@ class AppModule(Module):
     def provide_theme(self) -> PYITheme:
         return (
             PYIThemeBuilder()
-            # .set_screen_background_color('red')
+            .set_screen_background_color('red')
             .build()
         )
     
