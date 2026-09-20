@@ -1,14 +1,12 @@
+import ui
 from injector import inject
 
-import ui
-
+from src.framework.style.theme import PYITheme
 from src.framework.mvc.screen import PYIScreen
-from src.ui.project_list.project_list_model import ProjectListModel
-from src.ui.style.theme import PRTheme
 
 class ProjectListView(PYIScreen):
     @inject
-    def __init__(self, theme: PRTheme):
+    def __init__(self, theme: PYITheme):
         super().__init__()
         self.set_theme(theme)
 

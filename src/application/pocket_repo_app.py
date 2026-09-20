@@ -1,5 +1,6 @@
 from injector import Injector, inject, Module, provider, singleton, Injector
 
+from src.framework.style.theme import PYITheme, PYIThemeBuilder
 from src.framework.application.app import PYIApp
 from src.navigation.routes import ProjectListScreenRoute
 from src.framework.mvc.controller import PYIController
@@ -8,7 +9,6 @@ from src.framework.navigation.manager import PYINavigationManager
 from src.ui.project_list.project_list_controller import ProjectListController
 from src.ui.project_list.project_list_view import ProjectListView
 from src.common.repositories.catalog_repo import CatalogRepository
-from src.ui.style.theme import PRTheme, PRThemeBuilder
 
 
 class PocketRepoApp(PYIApp):
@@ -19,7 +19,7 @@ class PocketRepoApp(PYIApp):
 
 
     def run(self):
-        theme = self.injector.get(PRTheme)
+        theme = self.injector.get(PYITheme)
         self.present_intial_route(ProjectListScreenRoute(),theme)
 
 
@@ -34,9 +34,9 @@ class AppModule(Module):
 
     @singleton
     @provider
-    def provide_theme(self) -> PRTheme:
+    def provide_theme(self) -> PYITheme:
         return (
-            PRThemeBuilder()
+            PYIThemeBuilder()
             # .set_screen_background_color('red')
             .build()
         )
