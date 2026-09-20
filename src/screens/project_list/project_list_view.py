@@ -21,4 +21,8 @@ class ProjectListView(PYIScreen):
         self.table_view.data_source = data_source
         self.table_view.delegate = data_source
         self.root_view.add_subview(self.table_view)
+
+    def display_content(self):
+        self.show_content(self.root_view)
+        self.table_view.reload_data()
         
