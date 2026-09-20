@@ -1,9 +1,9 @@
 
 from injector import inject
 
-from src.common.repositories.catalog_repo import CatalogRepository
-from src.common.infrastructure.file_manager import FileManager
-from src.common.infrastructure.file_downloader import FileDownloader
+from common.repositories.catalog_repo import CatalogRepository
+from common.infrastructure.file_manager import FileManager
+from common.infrastructure.file_downloader import FileDownloader
 
 class ProjectUpdateService:
 

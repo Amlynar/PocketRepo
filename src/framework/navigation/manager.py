@@ -1,4 +1,4 @@
-from src.framework.style.theme import PYITheme
+from framework.style.theme import PYITheme
 import ui
 
 class PYINavigationManager:

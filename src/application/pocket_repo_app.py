@@ -1,14 +1,14 @@
 from injector import Injector, inject, Module, provider, singleton, Injector
 
-from src.framework.style.theme import PYITheme, PYIThemeBuilder
-from src.framework.application.app import PYIApp
-from src.navigation.routes import ProjectListScreenRoute
-from src.framework.mvc.controller import PYIController
-from src.framework.navigation.navigator import PYINavigationDelegate, PYIRoute
-from src.framework.navigation.manager import PYINavigationManager
-from src.ui.project_list.project_list_controller import ProjectListController
-from src.ui.project_list.project_list_view import ProjectListView
-from src.common.repositories.catalog_repo import CatalogRepository
+from framework.style.theme import PYITheme, PYIThemeBuilder
+from framework.application.app import PYIApp
+from navigation.routes import ProjectListScreenRoute
+from framework.mvc.controller import PYIController
+from framework.navigation.navigator import PYINavigationDelegate, PYIRoute
+from framework.navigation.manager import PYINavigationManager
+from ui.project_list.project_list_controller import ProjectListController
+from ui.project_list.project_list_view import ProjectListView
+from common.repositories.catalog_repo import CatalogRepository
 
 
 class PocketRepoApp(PYIApp):

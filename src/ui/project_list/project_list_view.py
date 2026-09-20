@@ -1,8 +1,8 @@
 import ui
 from injector import inject
 
-from src.framework.style.theme import PYITheme
-from src.framework.mvc.screen import PYIScreen
+from framework.style.theme import PYITheme
+from framework.mvc.screen import PYIScreen
 
 class ProjectListView(PYIScreen):
     @inject

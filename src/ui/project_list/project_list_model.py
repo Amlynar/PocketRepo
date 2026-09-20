@@ -1,5 +1,5 @@
 
-from src.common.models.project import Project
+from common.models.project import Project
 
 
 class ProjectListModel:

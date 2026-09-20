@@ -1,7 +1,7 @@
 
 
-from src.framework.mvc.screen import PYIScreen
-from src.framework.navigation.navigator import PYINavigationDelegate, PYIRoute
+from framework.mvc.screen import PYIScreen
+from framework.navigation.navigator import PYINavigationDelegate, PYIRoute
 
 
 class PYIController():

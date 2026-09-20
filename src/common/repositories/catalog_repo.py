@@ -2,7 +2,7 @@ import json
 from typing import Dict, List
 from injector import singleton
 
-from src.common.models.project import Project
+from common.models.project import Project
 
 
 CATALOG_FILE_PATH = "./assets/catalog.json"

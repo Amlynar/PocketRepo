@@ -1,7 +1,7 @@
 from injector import inject
 
-from src.common.services.project_update_service import ProjectUpdateService
-from src.common.repositories.catalog_repo import CatalogRepository
+from common.services.project_update_service import ProjectUpdateService
+from common.repositories.catalog_repo import CatalogRepository
 
 
 class DevApp:
