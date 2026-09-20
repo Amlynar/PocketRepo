@@ -41,3 +41,8 @@ class ProjectListController(PYIController):
         PYITableViewCellStyle.subtitle(cell, self.theme)
         cell.text_label.text = project.name
         return cell
+
+    def tableview_did_select(self, tableview, section, row):
+        project = self.model.projects[row]
+        print(f"Selected project: {project.name}")
+        
