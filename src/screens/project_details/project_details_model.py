@@ -1,9 +1,22 @@
 
 from common.models.project import Project
-
+from typing import List, Tuple
 
 class ProjectDetailsModel:
 
-    def __init__(self) -> None:
-        self.project: Project | None = None
+    def __init__(self):
+        self.title: str = ""
+        self.description: str = ""
+        self.info_list: list[tuple[str, str]] = []
+
+
+    def load_from_project(self, project: Project):
+        self.title = project.name
+        self.description = project.name
+
+        self.info_list = [
+            ("", project.id),
+            ("", project.destination),
+            ("", project.source.url)
+        ]
         

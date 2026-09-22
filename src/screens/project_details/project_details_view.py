@@ -62,3 +62,7 @@ class ProjectDetailsView(PYIScreen):
             self.table_view
         ):
             self.root_view.add_subview(v)
+
+    def display_content(self):
+        self.show_content(self.root_view)
+        self.table_view.reload_data()
