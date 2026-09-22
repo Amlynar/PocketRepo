@@ -60,7 +60,7 @@ class PYIScreen(ui.View):
         self.error_title_label.alignment = ui.ALIGN_CENTER
         
         self.error_desc_label = ui.Label()
-        PYILabelStyle.normal(self.title_label, self.theme)
+        PYILabelStyle.normal(self.error_desc_label, self.theme)
         self.error_desc_label.flex = 'WH'
         self.error_desc_label.text = ''
         self.error_desc_label.alignment = ui.ALIGN_CENTER
