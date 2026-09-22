@@ -49,10 +49,10 @@ class ProjectDetailsController(PYIController):
         cell.text_label.text = info_item[1]
         return cell
 
-    def delete_action(sender):
+    def delete_action(self, sender):
         print('Delete tapped')
 
-    def install_action(sender):
+    def install_action(self, sender):
         print('Install tapped')
 
         
