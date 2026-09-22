@@ -1,4 +1,5 @@
 
+from framework.style.style_button import PYIButtonStyle
 from framework.style.style_label import PYILabelStyle
 from framework.style.style_spinner import PYISpinnerStyle
 from framework.style.style_table_view import PYITableViewStyle
@@ -42,53 +43,39 @@ class ProjectDetailsView(PYIScreen):
 
     def init_root_view(self, data_source):
         self.title_label = ui.Label()
-        PYILabelStyle.normal(self.title_label, self.theme)
+        PYILabelStyle.title(self.title_label, self.theme)
+        self.title_label.flex = 'WH'
         self.title_label.text = ''
-        # self.title_label.font = ('<system-bold>', 24)
         self.title_label.alignment = ui.ALIGN_CENTER
-        # self.title_label.text_color = '#1c1c1e'
         
         self.desc_label = ui.Label()
         PYILabelStyle.normal(self.title_label, self.theme)
+        self.desc_label.flex = 'WH'
         self.desc_label.text = ''
         # self.desc_label.font = ('<system>', 14)
         self.desc_label.alignment = ui.ALIGN_CENTER
-        # self.desc_label.text_color = '#3a3a3c'
-        self.desc_label.number_of_lines = 0  # Allows multi-line wrapping
 
         self.delete_btn = ui.Button(title='Delete')
+        PYIButtonStyle.normal(self.delete_btn, self.theme)
         self.delete_btn.action = data_source.delete_action
-        # delete_btn.frame = (0, 0, half_width, 44)
-        # self.delete_btn.background_color = '#ff3b30'
-        # self.delete_btn.tint_color = 'white'
-        # delete_btn.corner_radius = 5
-        # delete_btn.flex = 'WBR'
 
         self.delete_spinner = ui.ActivityIndicator()
-        PYISpinnerStyle.fullscreen_loading(self.delete_spinner, self.theme)
+        PYISpinnerStyle.loading(self.delete_spinner, self.theme)
 
         self.install_btn = ui.Button(title='Install')
+        PYIButtonStyle.normal(self.delete_btn, self.theme)
         self.install_btn.action = data_source.install_action
-        # install_btn.frame = (half_width + 10, 0, half_width, 44)
-        # self.install_btn.background_color = '#34c759'
-        # self.install_btn.tint_color = 'white'
-        # install_btn.corner_radius = 5
-        # install_btn.flex = 'WBL'
 
         self.install_spinner = ui.ActivityIndicator()
-        PYISpinnerStyle.fullscreen_loading(self.install_spinner, self.theme)
-        
-        # 3. TableView
+        PYISpinnerStyle.loading(self.install_spinner, self.theme)
+
         self.table_view = ui.TableView()
         PYITableViewStyle.normal(self.table_view, self.theme)
         self.table_view.flex = 'WH'
         self.table_view.data_source = data_source
         self.table_view.delegate = data_source
-        # self.table_view.background_color = '#ffffff'
-        # self.table_view.corner_radius = 8
 
-        # scroll_view = ui.ScrollView()
-        # scroll_view.flex = 'WH'
+
         for v in  (
             self.title_label,
             self.desc_label,
@@ -99,8 +86,6 @@ class ProjectDetailsView(PYIScreen):
             self.install_spinner
         ):
             self.root_view.add_subview(v)
-            # scroll_view.add_subview(v)
-        # self.root_view.add_subview(scroll_view)
 
     def display_content(self):
         self.show_content(self.root_view)

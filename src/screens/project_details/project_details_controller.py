@@ -32,8 +32,7 @@ class ProjectDetailsController(PYIController):
     def on_screen_loaded(self):
         if self.project_id is None:
             raise ValueError("project_id is None")
-        # self.view.title_label.text = f"Project ID:{self.project_id}"
-        # self.view.root_view.add_subview(self.view.title_label)
+        
         self.view.show_loading()
 
         project = self.catalog_repository.get_project_by_id(self.project_id)

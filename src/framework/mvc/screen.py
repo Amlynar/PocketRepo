@@ -35,7 +35,7 @@ class PYIScreen(ui.View):
         self.hide_all_displayed()
             
         self.loading_spinner = ui.ActivityIndicator()
-        PYISpinnerStyle.fullscreen_loading(self.loading_spinner, self.theme)
+        PYISpinnerStyle.loading(self.loading_spinner, self.theme)
         self.loading_spinner.center = (self.width * 0.5, self.height * 0.5)
         
         self.add_subview(self.loading_spinner)

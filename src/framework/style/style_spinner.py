@@ -5,7 +5,7 @@ import ui
 class PYISpinnerStyle:
 
     @staticmethod
-    def fullscreen_loading(spinner: ui.ActivityIndicator, theme: PYITheme):
+    def loading(spinner: ui.ActivityIndicator, theme: PYITheme):
         spinner.style = theme.spinner_style
         spinner.hides_when_stopped = True
         # loading_spinner.color = '#333333' # Dark gray spinner color
