@@ -48,4 +48,11 @@ class ProjectDetailsController(PYIController):
         PYITableViewCellStyle.navigation(cell, self.theme)
         cell.text_label.text = info_item[1]
         return cell
+
+    def delete_action(sender):
+        print('Delete tapped')
+
+    def install_action(sender):
+        print('Install tapped')
+
         
