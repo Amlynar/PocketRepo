@@ -28,7 +28,7 @@ class PYIScreen(ui.View):
         if self.content:
             self.content.frame = (0, 0, self.width, self.height)
         if self.error:
-            self.error.frame (0, 0, self.width, self.height)
+            self.error.frame = (0, 0, self.width, self.height)
 
     def show_loading(self):
         if self.loading_spinner:
