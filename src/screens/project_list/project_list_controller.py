@@ -27,11 +27,14 @@ class ProjectListController(PYIController):
     @ui.in_background
     def on_screen_loaded(self):
         if self.view is None:
-            raise ValueError("self.view should not be None")
+            pass
+    
         self.view.show_loading()
-        self.model.projects = self.catalog_repository.fetch_all_projects()
-        # self.view.display_content()
-        self.view.show_error()
+        try:
+            self.model.projects = self.catalog_repository.fetch_all_projects()
+            self.view.display_content()
+        except Exception as _:
+            self.view.show_error()
         
     def tableview_number_of_rows(self, tableview, section):
         return len(self.model.projects)

@@ -31,16 +31,18 @@ class ProjectDetailsController(PYIController):
     @ui.in_background
     def on_screen_loaded(self):
         if self.project_id is None:
-            raise ValueError("project_id is None")
+            pass
         
         self.view.show_loading()
+        try:
+            project = self.catalog_repository.fetch_project(self.project_id)
+            self.model.load_from_project(project)
 
-        project = self.catalog_repository.fetch_project(self.project_id)
-        self.model.load_from_project(project)
-
-        self.view.title_label.text = self.model.title
-        self.view.desc_label.text = self.model.description
-        self.view.display_content()
+            self.view.title_label.text = self.model.title
+            self.view.desc_label.text = self.model.description
+            self.view.display_content()
+        except Exception as _:
+            self.view.show_error()
 
     def tableview_number_of_rows(self, tableview, section):
             return len(self.model.info_list)
