@@ -46,6 +46,6 @@ class ProjectDetailsController(PYIController):
         info_item = self.model.info_list[row]
         cell = ui.TableViewCell('default')
         PYITableViewCellStyle.navigation(cell, self.theme)
-        cell.text_label.text = info_item[row][1]
+        cell.text_label.text = info_item[1]
         return cell
         
