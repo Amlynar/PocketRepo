@@ -28,7 +28,7 @@ class ProjectDetailsView(PYIScreen):
 
         btn_top = self.desc_label.frame[1] + self.desc_label.frame[3] + pad
         self.delete_btn.frame = (pad, btn_top, (self.width - pad) / 2, 20)
-        self.install_btn = ((self.width - pad) / 2, btn_top, (self.width - pad) / 2, 20)
+        self.install_btn.frame = ((self.width - pad) / 2, btn_top, (self.width - pad) / 2, 20)
 
         
         # Position TableView (Takes remaining space)
