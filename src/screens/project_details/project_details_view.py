@@ -27,8 +27,8 @@ class ProjectDetailsView(PYIScreen):
         self.desc_label.frame = (pad, desc_top, self.width - (pad * 2), 50)
 
         btn_top = self.desc_label.frame[1] + self.desc_label.frame[3] + pad
-        self.delete_btn.frame = (pad, btn_top, (self.width - pad) / 2, 20)
-        self.install_btn.frame = ((self.width - pad) / 2, btn_top, (self.width - pad) / 2, 20)
+        self.delete_btn.frame = (pad, btn_top, (self.width - pad) / 2, 40)
+        self.install_btn.frame = ((self.width - pad) / 2, btn_top, (self.width - pad) / 2, 40)
 
         
         # Position TableView (Takes remaining space)
@@ -55,16 +55,16 @@ class ProjectDetailsView(PYIScreen):
         self.delete_btn = ui.Button(title='Delete')
         self.delete_btn.action = data_source.delete_action
         # delete_btn.frame = (0, 0, half_width, 44)
-        # delete_btn.background_color = '#ff3b30'
-        # delete_btn.tint_color = 'white'
+        self.delete_btn.background_color = '#ff3b30'
+        self.delete_btn.tint_color = 'white'
         # delete_btn.corner_radius = 5
         # delete_btn.flex = 'WBR'
 
         self.install_btn = ui.Button(title='Install')
         self.install_btn.action = data_source.install_action
         # install_btn.frame = (half_width + 10, 0, half_width, 44)
-        # install_btn.background_color = '#34c759'
-        # install_btn.tint_color = 'white'
+        self.install_btn.background_color = '#34c759'
+        self.install_btn.tint_color = 'white'
         # install_btn.corner_radius = 5
         # install_btn.flex = 'WBL'
         
