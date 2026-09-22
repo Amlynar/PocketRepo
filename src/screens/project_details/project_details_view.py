@@ -25,9 +25,14 @@ class ProjectDetailsView(PYIScreen):
         # Position Description (Below Title)
         desc_top = self.title_label.frame[1] + self.title_label.frame[3] + 8
         self.desc_label.frame = (pad, desc_top, self.width - (pad * 2), 50)
+
+        btn_top = self.desc_label.frame[1] + self.desc_label.frame[3] + pad
+        self.delete_btn.frame = (pad, btn_top, (self.width - pad) / 2, 20)
+        self.install_btn = ((self.width - pad) / 2, btn_top, (self.width - pad) / 2, 20)
+
         
         # Position TableView (Takes remaining space)
-        table_top = self.desc_label.frame[1] + self.desc_label.frame[3] + pad
+        table_top = self.install_btn.frame[1] + self.install_btn.frame[3] + pad
         table_height = self.height - table_top - pad
         self.table_view.frame = (pad, table_top, self.width - (pad * 2), table_height)
 
@@ -47,16 +52,16 @@ class ProjectDetailsView(PYIScreen):
         # self.desc_label.text_color = '#3a3a3c'
         self.desc_label.number_of_lines = 0  # Allows multi-line wrapping
 
-        delete_btn = ui.Button(title='Delete')
-        delete_btn.action = data_source.delete_action
+        self.delete_btn = ui.Button(title='Delete')
+        self.delete_btn.action = data_source.delete_action
         # delete_btn.frame = (0, 0, half_width, 44)
         # delete_btn.background_color = '#ff3b30'
         # delete_btn.tint_color = 'white'
         # delete_btn.corner_radius = 5
         # delete_btn.flex = 'WBR'
 
-        install_btn = ui.Button(title='Install')
-        install_btn.action = data_source.install_action
+        self.install_btn = ui.Button(title='Install')
+        self.install_btn.action = data_source.install_action
         # install_btn.frame = (half_width + 10, 0, half_width, 44)
         # install_btn.background_color = '#34c759'
         # install_btn.tint_color = 'white'
@@ -72,15 +77,16 @@ class ProjectDetailsView(PYIScreen):
         # self.table_view.background_color = '#ffffff'
         # self.table_view.corner_radius = 8
 
-        scroll_view = ui.ScrollView()
-        scroll_view.flex = 'WH'
+        # scroll_view = ui.ScrollView()
+        # scroll_view.flex = 'WH'
         for v in  (
             self.title_label,
             self.desc_label,
             self.table_view
         ):
-            scroll_view.add_subview(v)
-        self.root_view.add_subview(scroll_view)
+            self.root_view.add_subview(v)
+            # scroll_view.add_subview(v)
+        # self.root_view.add_subview(scroll_view)
 
     def display_content(self):
         self.show_content(self.root_view)
