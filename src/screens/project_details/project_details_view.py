@@ -21,10 +21,8 @@ class ProjectDetailsView(PYIScreen):
 
         pad = 16
         
-        # Position Title (Top)
         self.title_label.frame = (pad, pad, self.width - (pad * 2), 40)
         
-        # Position Description (Below Title)
         desc_top = self.title_label.frame[1] + self.title_label.frame[3] + 8
         self.desc_label.frame = (pad, desc_top, self.width - (pad * 2), 50)
 

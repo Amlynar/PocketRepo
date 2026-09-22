@@ -30,6 +30,13 @@ class PYIScreen(ui.View):
         if self.error:
             self.error.frame = (0, 0, self.width, self.height)
 
+            pad = 16
+                    
+            self.error_title_label.frame = (pad, pad, self.width - (pad * 2), 40)
+
+            desc_top = self.error_title_label.frame[1] + self.error_title_label.frame[3] + 8
+            self.error_desc_label.frame = (pad, desc_top, self.width - (pad * 2), 50)
+
     def show_loading(self):
         if self.loading_spinner:
             return
