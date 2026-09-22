@@ -35,7 +35,7 @@ class ProjectDetailsController(PYIController):
         
         self.view.show_loading()
 
-        project = self.catalog_repository.get_project_by_id(self.project_id)
+        project = self.catalog_repository.fetch_project(self.project_id)
         self.model.load_from_project(project)
 
         self.view.title_label.text = self.model.title

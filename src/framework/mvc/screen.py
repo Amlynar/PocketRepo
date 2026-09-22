@@ -1,4 +1,5 @@
 
+from framework.style.style_label import PYILabelStyle
 from framework.style.style_screen import PYIScreenStyle
 from framework.style.style_spinner import PYISpinnerStyle
 from framework.style.style_view import PYIViewStyle
@@ -47,11 +48,32 @@ class PYIScreen(ui.View):
             self.remove_subview(self.loading_spinner)
             self.loading_spinner = None
 
-    def show_error(self):
+    def show_error(self, title="Error", message="Something went wrong."):
         if self.error:
             return
         self.hide_all_displayed()
-        # TODO Implement full screen error state
+
+        self.error_title_label = ui.Label()
+        PYILabelStyle.title(self.title_label, self.theme)
+        self.error_title_label.flex = 'WH'
+        self.error_title_label.text = ''
+        self.error_title_label.alignment = ui.ALIGN_CENTER
+        
+        self.error_desc_label = ui.Label()
+        PYILabelStyle.normal(self.title_label, self.theme)
+        self.error_desc_label.flex = 'WH'
+        self.error_desc_label.text = ''
+        self.error_desc_label.alignment = ui.ALIGN_CENTER
+
+        self.error = ui.View()
+        PYIViewStyle.clear(self.error, self.theme)
+        self.error.flex = 'WH'
+        for v in (
+            self.error_title_label,
+            self.error_desc_label
+        ):
+            self.error.add_subview(v)
+        self.add_subview(self.error)
 
     def hide_error(self):
         if self.error:

@@ -29,9 +29,9 @@ class ProjectListController(PYIController):
         if self.view is None:
             raise ValueError("self.view should not be None")
         self.view.show_loading()
-        self.catalog_repository.load_catalog()
-        self.model.projects = self.catalog_repository.get_all_projects()
-        self.view.display_content()
+        self.model.projects = self.catalog_repository.fetch_all_projects()
+        # self.view.display_content()
+        self.view.show_error()
         
     def tableview_number_of_rows(self, tableview, section):
         return len(self.model.projects)

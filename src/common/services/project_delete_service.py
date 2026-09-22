@@ -15,11 +15,7 @@ class ProjectDeleteService:
 
 
     def delete_project(self, project_id: str):
-        exists = self.catalog_repo.project_exists(project_id)
-        if not exists:
-            raise ValueError(f"Project with ID '{project_id}' does not exist in the catalog.")
-
-        project = self.catalog_repo.get_project_by_id(project_id)
+        project = self.catalog_repo.fetch_project(project_id)
         extract_path = self.file_manager.get_project_directory(project_directory_name=project.destination)
 
         self.file_manager.delete_directory(extract_path)

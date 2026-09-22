@@ -52,7 +52,6 @@ class ProjectDetailsView(PYIScreen):
         PYILabelStyle.normal(self.title_label, self.theme)
         self.desc_label.flex = 'WH'
         self.desc_label.text = ''
-        # self.desc_label.font = ('<system>', 14)
         self.desc_label.alignment = ui.ALIGN_CENTER
 
         self.delete_btn = ui.Button(title='Delete')
