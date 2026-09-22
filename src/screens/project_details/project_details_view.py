@@ -82,7 +82,9 @@ class ProjectDetailsView(PYIScreen):
         for v in  (
             self.title_label,
             self.desc_label,
-            self.table_view
+            self.table_view,
+            self.delete_btn,
+            self.install_btn
         ):
             self.root_view.add_subview(v)
             # scroll_view.add_subview(v)
