@@ -12,11 +12,10 @@ class ProjectDetailsModel:
 
     def load_from_project(self, project: Project):
         self.title = project.name
-        self.description = project.name
+        self.description = project.description
 
         self.info_list = [
             ("", project.id),
             ("", project.destination),
             ("", project.source.url)
         ]
-        

@@ -33,12 +33,10 @@ class ProjectDetailsController(PYIController):
         self.view.show_loading()
 
         project = self.catalog_repository.get_project_by_id(self.project_id)
-        print(f"project name:{project.name} des:{project.description}")
         self.model.load_from_project(project)
-        print(f"model title:{self.model.title} desc:{self.model.description}")
 
-        self.view.title_label.name = self.model.title
-        self.view.desc_label.name = self.model.description
+        self.view.title_label.text = self.model.title
+        self.view.desc_label.text = self.model.description
         self.view.display_content()
 
     def tableview_number_of_rows(self, tableview, section):
