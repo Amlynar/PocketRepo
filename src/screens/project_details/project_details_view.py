@@ -59,3 +59,36 @@ class ProjectDetailsView(PYIScreen):
         table_top = self.desc_label.frame[1] + self.desc_label.frame[3] + pad
         table_height = self.height - table_top - pad
         self.table_view.frame = (pad, table_top, self.width - (pad * 2), table_height)
+
+    def init_root_view(self, data_source):
+        self.title_label = ui.Label()
+        PYILabelStyle.normal(self.title_label, self.theme)
+        self.title_label.text = 'My Title'
+        # self.title_label.font = ('<system-bold>', 24)
+        self.title_label.alignment = ui.ALIGN_CENTER
+        # self.title_label.text_color = '#1c1c1e'
+        
+        self.desc_label = ui.Label()
+        PYILabelStyle.normal(self.title_label, self.theme)
+        self.desc_label.text = 'This dashboard displays your upcoming tasks. Select an item below to view more detailed insights or to complete it.'
+        # self.desc_label.font = ('<system>', 14)
+        self.desc_label.alignment = ui.ALIGN_CENTER
+        # self.desc_label.text_color = '#3a3a3c'
+        self.desc_label.number_of_lines = 0  # Allows multi-line wrapping
+        
+        # 3. TableView
+        self.table_view = ui.TableView()
+        PYITableViewStyle.normal(self.table_view, self.theme)
+        self.table_view.flex = 'WH'
+        self.table_view.data_source = data_source
+        self.table_view.delegate = data_source
+        # self.table_view.background_color = '#ffffff'
+        # self.table_view.corner_radius = 8
+
+        for v in  (
+            self.title_label,
+            self.desc_label,
+            self.table_view
+        ):
+            self.root_view.add_subview(v)
+            
