@@ -1,5 +1,6 @@
 
 from framework.style.style_label import PYILabelStyle
+from framework.style.style_spinner import PYISpinnerStyle
 from framework.style.style_table_view import PYITableViewStyle
 import ui
 from injector import inject
@@ -27,10 +28,13 @@ class ProjectDetailsView(PYIScreen):
         self.desc_label.frame = (pad, desc_top, self.width - (pad * 2), 50)
 
         btn_top = self.desc_label.frame[1] + self.desc_label.frame[3] + pad
-        self.delete_btn.frame = (pad, btn_top, (self.width - pad) / 2, 40)
-        self.install_btn.frame = ((self.width - pad) / 2, btn_top, (self.width - pad) / 2, 40)
 
-        
+        self.delete_btn.frame = (pad, btn_top, (self.width - pad) / 2, 40)
+        self.delete_spinner.center = self.delete_btn.center
+
+        self.install_btn.frame = ((self.width - pad) / 2, btn_top, (self.width - pad) / 2, 40)
+        self.install_spinner.center = self.install_btn.center
+
         # Position TableView (Takes remaining space)
         table_top = self.install_btn.frame[1] + self.install_btn.frame[3] + pad
         table_height = self.height - table_top - pad
@@ -60,6 +64,9 @@ class ProjectDetailsView(PYIScreen):
         # delete_btn.corner_radius = 5
         # delete_btn.flex = 'WBR'
 
+        self.delete_spinner = ui.ActivityIndicator()
+        PYISpinnerStyle.fullscreen_loading(self.delete_spinner, self.theme)
+
         self.install_btn = ui.Button(title='Install')
         self.install_btn.action = data_source.install_action
         # install_btn.frame = (half_width + 10, 0, half_width, 44)
@@ -67,6 +74,9 @@ class ProjectDetailsView(PYIScreen):
         # self.install_btn.tint_color = 'white'
         # install_btn.corner_radius = 5
         # install_btn.flex = 'WBL'
+
+        self.install_spinner = ui.ActivityIndicator()
+        PYISpinnerStyle.fullscreen_loading(self.install_spinner, self.theme)
         
         # 3. TableView
         self.table_view = ui.TableView()
@@ -84,7 +94,9 @@ class ProjectDetailsView(PYIScreen):
             self.desc_label,
             self.table_view,
             self.delete_btn,
-            self.install_btn
+            self.delete_spinner,
+            self.install_btn,
+            self.install_spinner
         ):
             self.root_view.add_subview(v)
             # scroll_view.add_subview(v)

@@ -53,10 +53,20 @@ class ProjectDetailsController(PYIController):
         cell.text_label.text = info_item[1]
         return cell
 
+    @ui.in_background
     def delete_action(self, sender):
+        if self.project_id is None:
+            raise ValueError("self.project_id should not be None")
+        self.view.delete_spinner.start()
         self.project_delete_service.delete_project(self.project_id)
+        self.view.delete_spinner.stop()
 
+    @ui.in_background
     def install_action(self, sender):
+        if self.project_id is None:
+            raise ValueError("self.project_id should not be None")
+        self.view.install_spinner.start()
         self.project_update_service.update_project(self.project_id)
+        self.view.install_spinner.stop()
 
         
