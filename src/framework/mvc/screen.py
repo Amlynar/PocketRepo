@@ -54,7 +54,7 @@ class PYIScreen(ui.View):
         self.hide_all_displayed()
 
         self.error_title_label = ui.Label()
-        PYILabelStyle.title(self.title_label, self.theme)
+        PYILabelStyle.title(self.error_title_label, self.theme)
         self.error_title_label.flex = 'WH'
         self.error_title_label.text = ''
         self.error_title_label.alignment = ui.ALIGN_CENTER
