@@ -22,6 +22,7 @@ class ProjectDetailsView(PYIScreen):
         # self.title_label.text_color = '#1c1c1e'
         
         self.desc_label = ui.Label()
+        PYILabelStyle.normal(self.title_label, self.theme)
         self.desc_label.text = 'This dashboard displays your upcoming tasks. Select an item below to view more detailed insights or to complete it.'
         # self.desc_label.font = ('<system>', 14)
         self.desc_label.alignment = ui.ALIGN_CENTER
@@ -39,7 +40,7 @@ class ProjectDetailsView(PYIScreen):
             self.desc_label,
             self.table_view
         ):
-            self.root_view.add_subview(self.table_view)
+            self.root_view.add_subview(v)
 
 
     def layout(self):

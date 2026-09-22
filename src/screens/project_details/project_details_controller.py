@@ -4,6 +4,7 @@ from injector import inject
 
 from common.repositories.catalog_repo import CatalogRepository
 from framework.mvc.controller import PYIController
+from framework.style.style_table_view_cell import PYITableViewCellStyle
 from screens.project_details.project_details_model import ProjectDetailsModel
 from screens.project_details.project_details_view import ProjectDetailsView
 
@@ -24,5 +25,15 @@ class ProjectDetailsController(PYIController):
         # self.view.title_label.text = f"Project ID:{self.project_id}"
         # self.view.root_view.add_subview(self.view.title_label)
 
-        
+
         self.view.show_content(self.view.root_view)
+
+    # def tableview_number_of_rows(self, tableview, section):
+    #         return 1
+        
+    # def tableview_cell_for_row(self, tableview, section, row):
+    #     # project = self.model.projects[row]
+    #     cell = ui.TableViewCell('default')
+    #     PYITableViewCellStyle.navigation(cell, self.theme)
+    #     cell.text_label.text = "Some test item"
+    #     return cell
