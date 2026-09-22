@@ -1,6 +1,8 @@
 
 
 from injector import inject
+from common.services.project_delete_service import ProjectDeleteService
+from common.services.project_update_service import ProjectUpdateService
 import ui
 
 from common.repositories.catalog_repo import CatalogRepository
@@ -14,12 +16,14 @@ from screens.project_details.project_details_view import ProjectDetailsView
 class ProjectDetailsController(PYIController):
 
     @inject
-    def __init__(self, model: ProjectDetailsModel, view: ProjectDetailsView, theme: PYITheme, catalog_repository: CatalogRepository):
+    def __init__(self, model: ProjectDetailsModel, view: ProjectDetailsView, theme: PYITheme, catalog_repository: CatalogRepository, project_delete_service: ProjectDeleteService, project_update_service: ProjectUpdateService):
         super().__init__()
         self.model = model
         self.view = view
         self.theme = theme
         self.catalog_repository = catalog_repository
+        self.project_update_service = project_update_service
+        self.project_delete_service = project_delete_service
         self.project_id: str | None = None
 
         self.view.init_root_view(data_source=self)
@@ -50,9 +54,9 @@ class ProjectDetailsController(PYIController):
         return cell
 
     def delete_action(self, sender):
-        print('Delete tapped')
+        self.project_delete_service.delete_project(self.project_id)
 
     def install_action(self, sender):
-        print('Install tapped')
+        self.project_update_service.update_project(self.project_id)
 
         
