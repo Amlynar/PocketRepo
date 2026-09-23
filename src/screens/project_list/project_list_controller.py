@@ -1,5 +1,6 @@
 from common.repositories.catalog_repo import CatalogRepository
 from common.services.project_update_service import ProjectUpdateService
+from framework.alert.alert_dialog import PYIAlert
 from framework.mvc.controller import PYIController
 from framework.style.style_table_view_cell import PYITableViewCellStyle
 from framework.style.theme import PYITheme
@@ -47,5 +48,6 @@ class ProjectListController(PYIController):
         return cell
 
     def tableview_did_select(self, tableview, section, row):
-        project = self.model.projects[row]
-        self.navigate(ProjectDetailsScreenRoute(project_id=project.id))
+        PYIAlert.simple_alert(title="Title",message="Message",positive_button="Ok")
+        # project = self.model.projects[row]
+        # self.navigate(ProjectDetailsScreenRoute(project_id=project.id))

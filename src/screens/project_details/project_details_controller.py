@@ -5,7 +5,7 @@ from common.services.project_delete_service import ProjectDeleteService
 from common.services.project_update_service import ProjectUpdateService
 import ui
 
-from common.repositories.catalog_repo import CatalogRepository
+from common.repositories.catalog_repo import CatalogRepository, InvalidProjectIdError
 from framework.mvc.controller import PYIController
 from framework.style.style_table_view_cell import PYITableViewCellStyle
 from framework.style.theme import PYITheme
@@ -41,6 +41,8 @@ class ProjectDetailsController(PYIController):
             self.view.title_label.text = self.model.title
             self.view.desc_label.text = self.model.description
             self.view.display_content()
+        except InvalidProjectIdError as e:
+            self.view.show_error("Error", e.message)
         except Exception as _:
             self.view.show_error()
 
@@ -57,7 +59,8 @@ class ProjectDetailsController(PYIController):
     @ui.in_background
     def delete_action(self, sender):
         if self.project_id is None:
-            raise ValueError("self.project_id should not be None")
+            
+            return
         self.view.delete_spinner.start()
         self.project_delete_service.delete_project(self.project_id)
         self.view.delete_spinner.stop()

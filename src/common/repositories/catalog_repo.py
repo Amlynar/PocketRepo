@@ -23,7 +23,7 @@ class CatalogRepository:
         if self._catalogs is None:
             self.load_catalog()
         if project_id not in self._catalogs:
-            raise ValueError(f"Project with ID '{project_id}' not found in the catalog.")
+            raise InvalidProjectIdError(f"Project with ID '{project_id}' not found in the catalog.")
         return self._catalogs[project_id]
 
     def load_catalog(self) -> None:
@@ -33,3 +33,8 @@ class CatalogRepository:
 
     def get_all_projects(self) -> List[Project]:
         return list(self._catalogs.values())
+
+class InvalidProjectIdError(Exception):
+    def __init__(self, message="An error occurred") -> None:
+        self.message = message
+        super().__init__(self.message)
