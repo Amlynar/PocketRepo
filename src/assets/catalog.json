@@ -13,6 +13,706 @@
         "auto_run": true,
         "version": "1.0.0"
       }
+    },
+    {
+      "id": "dummy_project_01",
+      "name": "Dummy Project 01",
+      "description": "Test project 01",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-01.zip"
+      },
+      "destination": "DummyProject01",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_02",
+      "name": "Dummy Project 02",
+      "description": "Test project 02",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-02.zip"
+      },
+      "destination": "DummyProject02",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_03",
+      "name": "Dummy Project 03",
+      "description": "Test project 03",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-03.zip"
+      },
+      "destination": "DummyProject03",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_04",
+      "name": "Dummy Project 04",
+      "description": "Test project 04",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-04.zip"
+      },
+      "destination": "DummyProject04",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_05",
+      "name": "Dummy Project 05",
+      "description": "Test project 05",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-05.zip"
+      },
+      "destination": "DummyProject05",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_06",
+      "name": "Dummy Project 06",
+      "description": "Test project 06",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-06.zip"
+      },
+      "destination": "DummyProject06",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_07",
+      "name": "Dummy Project 07",
+      "description": "Test project 07",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-07.zip"
+      },
+      "destination": "DummyProject07",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_08",
+      "name": "Dummy Project 08",
+      "description": "Test project 08",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-08.zip"
+      },
+      "destination": "DummyProject08",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_09",
+      "name": "Dummy Project 09",
+      "description": "Test project 09",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-09.zip"
+      },
+      "destination": "DummyProject09",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_10",
+      "name": "Dummy Project 10",
+      "description": "Test project 10",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-10.zip"
+      },
+      "destination": "DummyProject10",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_11",
+      "name": "Dummy Project 11",
+      "description": "Test project 11",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-11.zip"
+      },
+      "destination": "DummyProject11",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_12",
+      "name": "Dummy Project 12",
+      "description": "Test project 12",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-12.zip"
+      },
+      "destination": "DummyProject12",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_13",
+      "name": "Dummy Project 13",
+      "description": "Test project 13",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-13.zip"
+      },
+      "destination": "DummyProject13",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_14",
+      "name": "Dummy Project 14",
+      "description": "Test project 14",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-14.zip"
+      },
+      "destination": "DummyProject14",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_15",
+      "name": "Dummy Project 15",
+      "description": "Test project 15",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-15.zip"
+      },
+      "destination": "DummyProject15",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_16",
+      "name": "Dummy Project 16",
+      "description": "Test project 16",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-16.zip"
+      },
+      "destination": "DummyProject16",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_17",
+      "name": "Dummy Project 17",
+      "description": "Test project 17",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-17.zip"
+      },
+      "destination": "DummyProject17",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_18",
+      "name": "Dummy Project 18",
+      "description": "Test project 18",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-18.zip"
+      },
+      "destination": "DummyProject18",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_19",
+      "name": "Dummy Project 19",
+      "description": "Test project 19",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-19.zip"
+      },
+      "destination": "DummyProject19",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_20",
+      "name": "Dummy Project 20",
+      "description": "Test project 20",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-20.zip"
+      },
+      "destination": "DummyProject20",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_21",
+      "name": "Dummy Project 21",
+      "description": "Test project 21",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-21.zip"
+      },
+      "destination": "DummyProject21",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_22",
+      "name": "Dummy Project 22",
+      "description": "Test project 22",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-22.zip"
+      },
+      "destination": "DummyProject22",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_23",
+      "name": "Dummy Project 23",
+      "description": "Test project 23",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-23.zip"
+      },
+      "destination": "DummyProject23",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_24",
+      "name": "Dummy Project 24",
+      "description": "Test project 24",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-24.zip"
+      },
+      "destination": "DummyProject24",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_25",
+      "name": "Dummy Project 25",
+      "description": "Test project 25",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-25.zip"
+      },
+      "destination": "DummyProject25",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_26",
+      "name": "Dummy Project 26",
+      "description": "Test project 26",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-26.zip"
+      },
+      "destination": "DummyProject26",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_27",
+      "name": "Dummy Project 27",
+      "description": "Test project 27",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-27.zip"
+      },
+      "destination": "DummyProject27",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_28",
+      "name": "Dummy Project 28",
+      "description": "Test project 28",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-28.zip"
+      },
+      "destination": "DummyProject28",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_29",
+      "name": "Dummy Project 29",
+      "description": "Test project 29",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-29.zip"
+      },
+      "destination": "DummyProject29",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_30",
+      "name": "Dummy Project 30",
+      "description": "Test project 30",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-30.zip"
+      },
+      "destination": "DummyProject30",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_31",
+      "name": "Dummy Project 31",
+      "description": "Test project 31",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-31.zip"
+      },
+      "destination": "DummyProject31",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_32",
+      "name": "Dummy Project 32",
+      "description": "Test project 32",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-32.zip"
+      },
+      "destination": "DummyProject32",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_33",
+      "name": "Dummy Project 33",
+      "description": "Test project 33",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-33.zip"
+      },
+      "destination": "DummyProject33",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_34",
+      "name": "Dummy Project 34",
+      "description": "Test project 34",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-34.zip"
+      },
+      "destination": "DummyProject34",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_35",
+      "name": "Dummy Project 35",
+      "description": "Test project 35",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-35.zip"
+      },
+      "destination": "DummyProject35",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_36",
+      "name": "Dummy Project 36",
+      "description": "Test project 36",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-36.zip"
+      },
+      "destination": "DummyProject36",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_37",
+      "name": "Dummy Project 37",
+      "description": "Test project 37",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-37.zip"
+      },
+      "destination": "DummyProject37",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_38",
+      "name": "Dummy Project 38",
+      "description": "Test project 38",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-38.zip"
+      },
+      "destination": "DummyProject38",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_39",
+      "name": "Dummy Project 39",
+      "description": "Test project 39",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-39.zip"
+      },
+      "destination": "DummyProject39",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_40",
+      "name": "Dummy Project 40",
+      "description": "Test project 40",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-40.zip"
+      },
+      "destination": "DummyProject40",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_41",
+      "name": "Dummy Project 41",
+      "description": "Test project 41",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-41.zip"
+      },
+      "destination": "DummyProject41",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_42",
+      "name": "Dummy Project 42",
+      "description": "Test project 42",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-42.zip"
+      },
+      "destination": "DummyProject42",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_43",
+      "name": "Dummy Project 43",
+      "description": "Test project 43",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-43.zip"
+      },
+      "destination": "DummyProject43",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_44",
+      "name": "Dummy Project 44",
+      "description": "Test project 44",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-44.zip"
+      },
+      "destination": "DummyProject44",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_45",
+      "name": "Dummy Project 45",
+      "description": "Test project 45",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-45.zip"
+      },
+      "destination": "DummyProject45",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_46",
+      "name": "Dummy Project 46",
+      "description": "Test project 46",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-46.zip"
+      },
+      "destination": "DummyProject46",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_47",
+      "name": "Dummy Project 47",
+      "description": "Test project 47",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-47.zip"
+      },
+      "destination": "DummyProject47",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_48",
+      "name": "Dummy Project 48",
+      "description": "Test project 48",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-48.zip"
+      },
+      "destination": "DummyProject48",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_49",
+      "name": "Dummy Project 49",
+      "description": "Test project 49",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-49.zip"
+      },
+      "destination": "DummyProject49",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "dummy_project_50",
+      "name": "Dummy Project 50",
+      "description": "Test project 50",
+      "source": {
+        "type": "github_zip",
+        "url": "https://example.com/dummy-project-50.zip"
+      },
+      "destination": "DummyProject50",
+      "options": {
+        "auto_run": false,
+        "version": "1.0.0"
+      }
     }
   ]
 }
