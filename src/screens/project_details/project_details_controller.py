@@ -53,9 +53,10 @@ class ProjectDetailsController(PYIController):
         
     def tableview_cell_for_row(self, tableview, section, row):
         info_item = self.model.info_list[row]
-        cell = ui.TableViewCell('default')
-        PYITableViewCellStyle.navigation(cell, self.theme)
-        cell.text_label.text = info_item[1]
+        cell = ui.TableViewCell('subtitle')
+        PYITableViewCellStyle.subtitle(cell, self.theme)
+        cell.text_label.text = info_item[0]
+        cell.detail_text_label = info_item[1]
         return cell
 
     @ui.in_background

@@ -15,7 +15,7 @@ class ProjectDetailsModel:
         self.description = project.description
 
         self.info_list = [
-            ("", project.id),
-            ("", project.destination),
-            ("", project.source.url)
+            ("ID", project.id),
+            ("Destination", project.destination),
+            ("URL", project.source.url)
         ]
