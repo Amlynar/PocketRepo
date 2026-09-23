@@ -28,7 +28,8 @@ class ProjectListController(PYIController):
     @ui.in_background
     def on_screen_loaded(self):
         if self.view is None:
-            pass
+            PYIAlert.simple_alert(title="Error",message="View is None")
+            return
     
         self.view.show_loading()
         try:
@@ -48,6 +49,5 @@ class ProjectListController(PYIController):
         return cell
 
     def tableview_did_select(self, tableview, section, row):
-        PYIAlert.simple_alert(title="Title",message="Message",positive_button="Ok")
-        # project = self.model.projects[row]
-        # self.navigate(ProjectDetailsScreenRoute(project_id=project.id))
+        project = self.model.projects[row]
+        self.navigate(ProjectDetailsScreenRoute(project_id=project.id))

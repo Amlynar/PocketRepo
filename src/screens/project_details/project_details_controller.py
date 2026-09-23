@@ -3,6 +3,7 @@
 from injector import inject
 from common.services.project_delete_service import ProjectDeleteService
 from common.services.project_update_service import ProjectUpdateService
+from framework.alert.alert_dialog import PYIAlert
 import ui
 
 from common.repositories.catalog_repo import CatalogRepository, InvalidProjectIdError
@@ -31,7 +32,8 @@ class ProjectDetailsController(PYIController):
     @ui.in_background
     def on_screen_loaded(self):
         if self.project_id is None:
-            pass
+            PYIAlert.simple_alert(title="Error",message="View is None")
+            return
         
         self.view.show_loading()
         try:
@@ -59,8 +61,9 @@ class ProjectDetailsController(PYIController):
     @ui.in_background
     def delete_action(self, sender):
         if self.project_id is None:
-            
+            PYIAlert.simple_alert(title="Error",message="Project ID is None")
             return
+
         self.view.delete_spinner.start()
         self.project_delete_service.delete_project(self.project_id)
         self.view.delete_spinner.stop()
@@ -68,7 +71,9 @@ class ProjectDetailsController(PYIController):
     @ui.in_background
     def install_action(self, sender):
         if self.project_id is None:
-            raise ValueError("self.project_id should not be None")
+            PYIAlert.simple_alert(title="Error",message="Project ID is None")
+            return
+
         self.view.install_spinner.start()
         self.project_update_service.update_project(self.project_id)
         self.view.install_spinner.stop()
