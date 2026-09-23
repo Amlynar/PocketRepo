@@ -64,9 +64,15 @@ class ProjectDetailsController(PYIController):
             PYIAlert.simple_alert(title="Error",message="Project ID is None")
             return
 
-        self.view.delete_spinner.start()
-        self.project_delete_service.delete_project(self.project_id)
-        self.view.delete_spinner.stop()
+        try:
+            self.view.delete_spinner.start()
+            self.project_delete_service.delete_project(self.project_id)
+        except InvalidProjectIdError as _:
+            PYIAlert.simple_alert(title="Error",message="Invalid Project ID")
+        except Exception as _:
+            PYIAlert.simple_alert(title="Error",message="Unable to delete.")
+        finally:
+            self.view.delete_spinner.stop()
 
     @ui.in_background
     def install_action(self, sender):
@@ -74,8 +80,14 @@ class ProjectDetailsController(PYIController):
             PYIAlert.simple_alert(title="Error",message="Project ID is None")
             return
 
-        self.view.install_spinner.start()
-        self.project_update_service.update_project(self.project_id)
-        self.view.install_spinner.stop()
+        try:
+            self.view.install_spinner.start()
+            self.project_update_service.update_project(self.project_id)
+        except InvalidProjectIdError as _:
+            PYIAlert.simple_alert(title="Error",message="Invalid Project ID")
+        except Exception as _:
+            PYIAlert.simple_alert(title="Error",message="Unable to install.")
+        finally:
+            self.view.install_spinner.stop()
 
         
