@@ -16,6 +16,6 @@ class ProjectDetailsModel:
 
         self.info_list = [
             ("ID", project.id),
-            ("Destination", project.destination),
+            ("Root Directory", project.destination),
             ("URL", project.source.url)
         ]
