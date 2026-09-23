@@ -56,7 +56,7 @@ class ProjectDetailsController(PYIController):
         cell = ui.TableViewCell('subtitle')
         PYITableViewCellStyle.subtitle(cell, self.theme)
         cell.text_label.text = info_item[0]
-        cell.detail_text_label = info_item[1]
+        cell.detail_text_label.text = info_item[1]
         return cell
 
     @ui.in_background
