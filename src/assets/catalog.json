@@ -15,14 +15,14 @@
       }
     },
     {
-      "id": "dummy_project_01",
-      "name": "Dummy Project 01",
-      "description": "Test project 01",
+      "id": "fetch_point",
+      "name": "Fetch Point",
+      "description": "Client side",
       "source": {
         "type": "github_zip",
-        "url": "https://example.com/dummy-project-01.zip"
+        "url": "https://github.com/Amlynar/FetchPoint/archive/refs/heads/main.zip"
       },
-      "destination": "DummyProject01",
+      "destination": "FetchPoint",
       "options": {
         "auto_run": false,
         "version": "1.0.0"
