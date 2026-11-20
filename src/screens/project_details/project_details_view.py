@@ -47,7 +47,7 @@ class ProjectDetailsView(PYIScreen):
         self.title_label.alignment = ui.ALIGN_CENTER
         
         self.desc_label = ui.Label()
-        PYILabelStyle.normal(self.title_label, self.theme)
+        PYILabelStyle.normal(self.desc_label, self.theme)
         self.desc_label.flex = 'WH'
         self.desc_label.text = ''
         self.desc_label.alignment = ui.ALIGN_CENTER
@@ -60,7 +60,7 @@ class ProjectDetailsView(PYIScreen):
         PYISpinnerStyle.loading(self.delete_spinner, self.theme)
 
         self.install_btn = ui.Button(title='Install')
-        PYIButtonStyle.normal(self.delete_btn, self.theme)
+        PYIButtonStyle.normal(self.install_btn, self.theme)
         self.install_btn.action = data_source.install_action
 
         self.install_spinner = ui.ActivityIndicator()

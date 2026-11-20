@@ -84,7 +84,7 @@ class PYIScreen(ui.View):
 
     def hide_error(self):
         if self.error:
-            self.remove_view(self.error)
+            self.remove_subview(self.error)
             self.error = None
 
     def show_content(self, view: ui.View):

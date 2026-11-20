@@ -15,10 +15,10 @@ class PYIApp:
         self.current_controller: PYIController | None = None
 
     def run(self) -> None:
-        raise NotImplemented("PYI App run() not implemented")
+        raise NotImplementedError("PYI App run() not implemented")
 
     def map_route_to_controller(self, route: PYIRoute) -> PYIController:
-        raise NotImplemented("PYIApp to_controller() not implemented")
+        raise NotImplementedError("PYIApp to_controller() not implemented")
 
     def present_intial_route(self, intial_route: PYIRoute, theme:PYITheme=PYITheme()):
         controller = self.get_and_decorate_controller(intial_route)
@@ -39,6 +39,6 @@ class PYIApp:
     def get_and_decorate_controller(self, route: PYIRoute) -> PYIController:
         controller = self.map_route_to_controller(route)
         if controller.view is None:
-            raise NotImplemented(f"view is None for route {route}")
+            raise NotImplementedError(f"view is None for route {route}")
         controller.navigation = self.navigation
         return controller
