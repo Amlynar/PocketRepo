@@ -23,7 +23,7 @@ class CaCertificateService:
         self.file_manager = file_manager
 
     def get_certificate_path(self) -> Path:
-        # Single source of truth lives in framework so HomeLabSession and this service always agree.
+        # Single source of truth lives in framework so PYIHomeLabSession and this service always agree.
         return Path(CA_BUNDLE_PATH)
 
     def download_ca_certificate(self):

@@ -32,7 +32,3 @@ class PYIHomeLabSession(requests.Session):
     def _is_home_lab_url(url) -> bool:
         hostname = urlparse(str(url)).hostname or ""
         return hostname.lower().endswith(HOME_LAB_DOMAIN_SUFFIX)
-
-
-# Friendly alias for other projects: from framework.network.home_lab_session import HomeLabSession
-HomeLabSession = PYIHomeLabSession
