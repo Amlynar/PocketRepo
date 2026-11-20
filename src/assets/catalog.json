@@ -29,14 +29,14 @@
       }
     },
     {
-      "id": "dummy_project_02",
-      "name": "Dummy Project 02",
-      "description": "Test project 02",
+      "id": "insight",
+      "name": "Insight",
+      "description": "Displays personal financial information",
       "source": {
         "type": "github_zip",
-        "url": "https://example.com/dummy-project-02.zip"
+        "url": "https://github.com/Amlynar/InsightPythonista/archive/refs/heads/main.zip"
       },
-      "destination": "DummyProject02",
+      "destination": "Insight",
       "options": {
         "auto_run": false,
         "version": "1.0.0"
