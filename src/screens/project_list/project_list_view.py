@@ -22,6 +22,10 @@ class ProjectListView(PYIScreen):
         self.table_view.delegate = data_source
         self.root_view.add_subview(self.table_view)
 
+        self.settings_button_item = ui.ButtonItem(image=ui.Image.named('iob:gear_a_24'))
+        self.settings_button_item.action = data_source.settings_action
+        self.right_button_items = [self.settings_button_item]
+
     def display_content(self):
         self.show_content(self.root_view)
         self.table_view.reload_data()

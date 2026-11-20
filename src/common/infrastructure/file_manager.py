@@ -9,6 +9,20 @@ class FileManager:
     def delete_directory(self, path):
         shutil.rmtree(path, ignore_errors=True)
 
+    def replace_directory(self, source, destination):
+        """Delete destination (if present) and copy source into it.
+
+        Unlike delete_directory, errors are NOT swallowed so callers can report them.
+        """
+        source = Path(source)
+        destination = Path(destination)
+        if not source.is_dir():
+            raise FileNotFoundError(f"Source directory not found: {source}")
+        if destination.exists():
+            shutil.rmtree(destination)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(source, destination, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+
     def get_documents_directory(self) -> Path:
         return Path.home() / "Documents"
 

@@ -4,7 +4,7 @@ from framework.alert.alert_dialog import PYIAlert
 from framework.mvc.controller import PYIController
 from framework.style.style_table_view_cell import PYITableViewCellStyle
 from framework.style.theme import PYITheme
-from navigation.routes import ProjectDetailsScreenRoute
+from navigation.routes import ProjectDetailsScreenRoute, SettingsScreenRoute
 from screens.project_list.project_list_model import ProjectListModel
 from screens.project_list.project_list_view import ProjectListView
 import ui
@@ -38,6 +38,9 @@ class ProjectListController(PYIController):
         except Exception as _:
             self.view.show_error()
         
+    def settings_action(self, sender):
+        self.navigate(SettingsScreenRoute())
+
     def tableview_number_of_rows(self, tableview, section):
         return len(self.model.projects)
     

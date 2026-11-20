@@ -7,9 +7,10 @@ from framework.application.app import PYIApp
 from framework.mvc.controller import PYIController
 from framework.navigation.navigator import PYIRoute
 from framework.style.theme import PYITheme
-from navigation.routes import ProjectDetailsScreenRoute, ProjectListScreenRoute
+from navigation.routes import ProjectDetailsScreenRoute, ProjectListScreenRoute, SettingsScreenRoute
 from screens.project_details.project_details_controller import ProjectDetailsController
 from screens.project_list.project_list_controller import ProjectListController
+from screens.settings.settings_controller import SettingsController
 
 
 class PocketRepoApp(PYIApp):
@@ -35,6 +36,8 @@ class PocketRepoApp(PYIApp):
                 project_details_controller = self.injector.get(ProjectDetailsController)
                 project_details_controller.project_id = route.project_id
                 return project_details_controller
+            case SettingsScreenRoute():
+                return self.injector.get(SettingsController)
             case _:
                 raise ValueError(f"Unknown route: {self}")
 
