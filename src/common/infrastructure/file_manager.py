@@ -1,8 +1,11 @@
 
-import os, shutil, zipfile
+import hashlib, os, shutil, zipfile
 from pathlib import Path
 
 class FileManager:
+    # Files never copied to (or hashed for) an exported directory.
+    COPY_IGNORE = staticmethod(shutil.ignore_patterns("__pycache__", "*.pyc"))
+
     def __init__(self):
         pass
 
@@ -21,7 +24,22 @@ class FileManager:
         if destination.exists():
             shutil.rmtree(destination)
         destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copytree(source, destination, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(source, destination, ignore=self.COPY_IGNORE)
+
+    def hash_directory(self, path) -> str:
+        """SHA-256 over the relative paths and contents of every file replace_directory would copy."""
+        path = str(path)
+        sha = hashlib.sha256()
+        for root, dirs, files in os.walk(path):
+            ignored = self.COPY_IGNORE(root, dirs + files)
+            dirs[:] = sorted(d for d in dirs if d not in ignored)
+            for fname in sorted(f for f in files if f not in ignored):
+                fpath = os.path.join(root, fname)
+                # Normalise separators so the hash is identical on Windows and iOS.
+                sha.update(os.path.relpath(fpath, path).replace(os.sep, "/").encode("utf-8"))
+                with open(fpath, "rb") as f:
+                    sha.update(f.read())
+        return sha.hexdigest()
 
     def get_documents_directory(self) -> Path:
         return Path.home() / "Documents"

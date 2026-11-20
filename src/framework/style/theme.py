@@ -8,6 +8,8 @@ class PYITheme:
         self.view_background_color = PYIColor.TRANSPARENT
         self.navigation_bar_background_color = PYIColor.LIGHT_GRAY
         self.spinner_style = ui.ACTIVITY_INDICATOR_STYLE_GRAY
+        self.accent_color = PYIColor.BLUE
+        self.secondary_text_color = PYIColor.SECONDARY_TEXT
 
 class PYIThemeBuilder:
 
